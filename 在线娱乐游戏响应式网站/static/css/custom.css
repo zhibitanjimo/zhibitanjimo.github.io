@@ -1,0 +1,3717 @@
+/* ----------------------------------------------------------------------------------------
+* Author        : Awaiken
+* Template Name : Casimox - Casino & Gambling HTML Template
+* File          : CSS File
+* Version       : 1.0
+* ---------------------------------------------------------------------------------------- */
+/* INDEX
+----------------------------------------------------------------------------------------
+01. Global Variables
+02. General css
+03. Header css
+04. Hero css
+05. Jackpot Counter css
+06. About css
+07. How To Play  css
+08. Top Slot css
+09. Trusted Casino css
+10. Testimonial css
+11. Recent Posts css
+12. FAQs css
+13. Footer css
+14. About us css
+15. Online Games css
+16. Promotions css
+17. Contact Us css
+18. Blog Archive css
+19. Blog Single css
+20. Page Not Found css
+21. Media Query css
+-------------------------------------------------------------------------------------- */
+
+/************************************/
+/*** 	 01. Global Variables	  ***/
+/************************************/
+
+:root {
+	--body-primary-background: #080E37;
+	--body-secondary-background: #0B113C;
+	--box-bg-color: #01062c;
+	--primary-color: #FFF;
+	--secondary-color: #FF0052;
+	--text-color: #CFD0D9;
+	--accent-color: #D43568;
+	--divided-color: #FFFFFF33;
+	--primary-font: 'Poppins', sans-serif;
+	--secondary-font: 'Syne', sans-serif;
+	--transition: all 0.3s ease-in-out;
+}
+
+
+/************************************/
+/*** 	   02. General css		  ***/
+/************************************/
+
+body {
+	font-size: 16px;
+	font-weight: 400;
+	font-family: var(--primary-font);
+	color: var(--text-color);
+	line-height: 1.1em;
+	background-color: var(--body-primary-background);
+}
+
+p {
+	line-height: 1.75em;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--secondary-font);
+	font-weight: 700;
+	line-height: 1.1em;
+	margin: 0;
+	color: var(--primary-color);
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	outline: 0;
+}
+
+a:focus {
+	text-decoration: none;
+	outline: 0;
+}
+
+.container {
+	max-width: 1300px;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row > * {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.preloader {
+	background-color: var(--body-primary-background);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10000;
+}
+
+.preloader-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.preloader-box img {
+	max-width: 60px;
+	animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.btn-default {
+	font-family: var(--primary-font);
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: var(--primary-color);
+	background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+	border-radius: 5px;
+	box-shadow: 0px 0px 30px 0px rgba(255, 0, 82, 0.40);
+	padding: 16px 20px;
+	transition: var(--transition);
+	display: inline-block;
+}
+
+.btn-default:hover {
+	background: linear-gradient(180deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+	color: var(--primary-color);
+}
+
+#magic-cursor {
+	position: absolute;
+	width: 24px !important;
+	height: 24px !important;
+	pointer-events: none;
+	z-index:1000000;
+}
+
+#ball {
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	transform: translate(-50%, -50%);
+	width: 24px !important;
+	height: 24px !important;
+	border: 2px solid rgba(255,255,255,0.5);
+	border-radius: 50%;
+	pointer-events: none;
+	opacity: 1 !important;
+}
+
+.box-border-linear-gradient {
+	position: relative;
+}
+
+.box-border-linear-gradient::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 10px;
+	background: linear-gradient(var(--box-bg-color), var(--box-bg-color)) padding-box, linear-gradient(to bottom, #FFFFFF0D, #FFFFFF36) border-box;
+  	border: 2px solid transparent;
+}
+
+.box-border-linear-gradient > *{
+	position: inherit;
+	z-index: 1;
+}
+
+.section-title {
+	margin-bottom: 60px;
+}
+
+.section-title h3 {
+	font-family: var(--primary-font);
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: capitalize;
+	color: var(--text-color);
+	display: inline-block;
+	border: 1px solid var(--secondary-color);
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 100px;
+}
+
+.section-title h2 {
+	font-size: 50px;
+	font-weight: 700;
+	text-transform: capitalize;
+	text-shadow: 1px 1px 0px rgba(255, 0, 82, 0.70);
+	color: var(--primary-color);
+	margin-bottom: 0;
+}
+
+.section-title p {
+	max-width: 550px;
+	margin: 20px auto 0;
+}
+
+/************************************/
+/*** 	   03. Header css		  ***/
+/************************************/
+
+.main-header {
+	padding: 0;
+	border-bottom: 1px solid #FFFFFF20;
+	position: relative;
+	z-index: 100;
+}
+
+.navbar {
+	padding: 0;
+}
+
+.navbar .main-menu {
+	justify-content: flex-end;
+}
+
+.navbar .main-menu ul {
+	align-items: center;
+}
+
+.navbar .main-menu ul li {
+	margin: 0 20px;
+	padding: 35px 0px;
+	position: relative;
+}
+
+.navbar .main-menu ul li.btn-login,
+.navbar .main-menu ul li.btn-joinnow {
+	padding: 8px 20px;
+	border-radius: 5px;
+}
+
+.navbar .main-menu ul li.btn-login {
+	background: #FFFFFF00;
+	border: 1px solid var(--secondary-color);
+	box-shadow: none;
+	margin-right: 0;
+	transition: var(--transition);
+}
+
+.navbar .main-menu ul li.btn-joinnow {
+	color: var(--primary-color);
+	background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+	box-shadow: 0px 0px 30px 0px rgba(255, 0, 82, 0.70);
+	transition: var(--transition);
+}
+
+.navbar .main-menu ul li.btn-joinnow:hover,
+.navbar .main-menu ul li.btn-login:hover {
+	transition: var(--transition);
+	background: linear-gradient(180deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+	color: var(--primary-color);
+}
+
+.navbar .main-menu ul li.btn-login a:hover,
+.navbar .main-menu ul li.btn-joinnow a:hover,
+.navbar .main-menu ul li.btn-login a.active,
+.navbar .main-menu ul li.btn-joinnow a.active {
+	color: inherit;
+}
+
+.navbar .main-menu ul li.first-item {
+	margin-left: 0;
+}
+
+.navbar .main-menu ul li.submenu {
+	padding-right: 0;
+}
+
+.navbar .main-menu ul li.submenu>a:after {
+    content: '\f107';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1;
+    transform: translateY(-50%);
+}
+
+.navbar .main-menu ul li a {
+	font-family: var(--primary-font);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.2em;
+	color: var(--primary-color);
+	transition: var(--transition);
+	position: relative;
+}
+
+.navbar .main-menu ul li a:hover,
+.navbar .main-menu ul li a.active {
+	color: var(--secondary-color);
+}
+
+.navbar .main-menu ul li.menu-item.active {
+	color: var(--secondary-color);
+}
+
+.navbar .main-menu ul li a::before {
+	content: '';
+	position: absolute;
+}
+
+.navbar .main-menu ul ul {
+	display: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 200px;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: var(--secondary-color);
+	z-index: 1;
+	border-radius: 0 0 5px 5px;
+}
+
+.navbar .main-menu ul ul ul {
+	left: 100%;
+	top: 0%;
+}
+
+.navbar .main-menu ul ul li {
+	margin: 0;
+	padding: 5px 15px;
+	background-color: var(--accent-background);
+}
+
+.navbar .main-menu ul li.submenu ul li a {
+	padding: 5px !important;
+}
+
+.navbar .main-menu ul ul li a:hover,
+.navbar .main-menu ul ul li a:focus,
+.navbar .main-menu ul ul li a.active {
+	color: var(--body-secondary-background);
+}
+
+.navbar .main-menu ul li:hover > ul {
+	display: block;
+}
+
+.responsive-menu,
+.navbar-toggle {
+	display: none;
+}
+
+.responsive-menu {
+	margin-top: 10px;
+}
+
+.slicknav_menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.slicknav_btn {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+	border-radius: 5px;
+	padding: 7px 0 0;
+	margin: 0;
+}
+
+.slicknav_icon .slicknav_icon-bar {
+	display: block;
+	height: 3px;
+	width: 26px;
+	background-color: var(--primary-color);
+	margin: 4px auto;
+	border-radius: 2px;
+}
+
+.slicknav_icon .slicknav_icon-bar.slicknav_icon-bar {
+	content: '\f00d';
+	font-family: 'FontAwesome';
+	font-weight: 900;
+	font-size: 14px;
+}
+
+.slicknav_menu {
+	padding: 0;
+	background: var(--secondary-color);
+}
+
+.slicknav_nav .slicknav_row,
+.slicknav_nav a {
+	padding: 10px 20px;
+	margin: 0px;
+}
+
+.slicknav_nav {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.slicknav_nav ul {
+	margin: 0;
+}
+
+.slicknav_nav li ul li a {
+	margin: 0;
+	padding: 10px 30px;
+}
+
+.slicknav_nav li a {
+	font-size: 16px;
+	margin: 0;
+	padding: 10px 20px;
+	color: var(--primary-color);
+}
+
+.slicknav_nav li .slicknav_row:hover a {
+	color: inherit;
+}
+
+.slicknav_nav li a:hover,
+.slicknav_nav li a.active,
+.slicknav_nav li .slicknav_row:hover {
+	background-color: var(--body-primary-background);
+	color: var(--primary-color);
+	border-radius: 0;
+}
+
+.slicknav_nav li a a:hover,
+.slicknav_nav li a.active a:hover,
+.slicknav_nav li .slicknav_row a:hover {
+	background-color: #FFFFFF00;
+	color: var(--primary-color);
+}
+
+.slicknav_arrow {
+	font-size: 0 !important;
+	position: relative;
+}
+
+.slicknav_arrow:after {
+	content: '\f107';
+	position: absolute;
+	top: 50%;
+	right: -18px;
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 1;
+	margin-top: -13.5px;
+}
+
+.navbar-toggle a.slicknav_btn .slicknav_icon span.slicknav_icon-bar {
+	transition: 0.1s;
+	border-radius: 2px;
+}
+
+.navbar-toggle a.slicknav_btn.slicknav_open .slicknav_icon span.slicknav_icon-bar:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.navbar-toggle a.slicknav_btn.slicknav_open .slicknav_icon span.slicknav_icon-bar:nth-child(2) {
+	opacity: 0;
+}
+
+.navbar-toggle a.slicknav_btn.slicknav_open .slicknav_icon span.slicknav_icon-bar:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/************************************/
+/*** 	     04. Hero css		  ***/
+/************************************/
+
+.hero-section {
+	padding: 120px 0 220px;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.hero-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url('../image/hero-stripe.svg') no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.hero-section .container {
+	position: relative;
+	z-index: 10;
+}
+
+.hero-section .section-title {
+	margin-bottom: 30px;
+}
+
+.hero-section .section-title h2 {
+	font-size: 56px;
+}
+
+.hero-content .hero-body p {
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--text-color);
+	margin-bottom: 30px;
+	padding-right: 90px;
+}
+
+.hero-content .hero-footer .btn-accent {
+	background: #FFFFFF00;
+	border: 2px solid var(--secondary-color);
+	padding: 16px 22px;
+	box-shadow: none;
+	margin-left: 30px;
+}
+
+.hero-content .hero-footer .btn-accent:hover {
+	background: linear-gradient(180deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+}
+
+/**************************************/
+/*** 	05. Jackpot Counter css		***/
+/**************************************/
+
+.jackpot-section {
+	margin-top: -85px;
+	position: relative;
+	z-index: 10;
+}
+
+.jackpot-section .row {
+	border-radius: 100px;
+	border: 4px solid var(--secondary-color);
+	background-color: var(--body-primary-background);
+	box-shadow: 0px 0px 5px 0px #202D85 inset;
+	padding: 0 40px;
+}
+
+.jackpot-section .jackpot-img img {
+	margin-top: -65px;
+}
+
+.jackpot-section .jackpot-title h2 {
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--primary-color);
+	padding: 0 30px;
+}
+
+.jackpot-section .jackpot-title h2 span {
+	color: var(--secondary-color);
+}
+
+.jackpot-section .jackpot-counter {
+	padding: 0 30px;
+	text-align: left;
+	display: block;
+	color: var(--primary-color);
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 1.4em;
+}
+
+/************************************/
+/***   		06. About css    	  ***/
+/************************************/
+
+.about-section {
+	position: relative;
+	background-color: var(--body-primary-background);
+	padding: 100px 0;
+}
+
+.about-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: url('../image/about-us-bg-img.png') no-repeat center right;
+	background-size: cover;
+	width: 149px;
+	height: 91px;
+	transform: translate(-100px, 50px);
+}
+
+.about-section::after,
+.topslot-section::after,
+.testimonial-section::after,
+.faq-section::after,
+.about-information::after,
+.funfact-section:after,
+.promotions-section:after,
+.page-contact-us::after {
+	content: '';
+	position: absolute;
+	background: url('../image/blur-bg-left-img.png') no-repeat;
+	background-size: cover;
+	left: 0;
+	bottom: 0;
+	width: 714px;
+	height: 604px;
+}
+
+.about-img {
+	position: relative;
+	z-index: 99;
+	margin-right: 6px;
+}
+
+.about-feature-item {
+	background-color: #070B31;
+	padding: 30px 30px 26px 30px;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.about-feature-item:last-child {
+	margin-bottom: 0;
+}
+
+.about-feature-icon,
+.about-feature-content {
+	position: relative;
+	z-index: 10;
+}
+
+.about-feature-icon {
+	width: 12%;
+}
+
+.about-feature-icon img {
+	width: 50px;
+	height: 50px;
+}
+
+.about-feature-content {
+	width: 88%;
+}
+
+.about-feature-content h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+/************************************/
+/*** 	07. How To Play  css  	  ***/
+/************************************/
+
+.howtoplay-section {
+	position: relative;
+	padding: 100px 0;
+	background-color: var(--body-secondary-background);
+}
+
+.howtoplay-section::after,
+.trusted-casino-section::after,
+.recent-post-section::after,
+.advantage-section:after,
+.gameslot-section:after {
+	content: '';
+	position: absolute;
+	background: url('../image/blur-bg-right-img.png') no-repeat;
+	background-size: cover;
+	right: 0;
+	bottom: 0;
+	width: 714px;
+	height: 604px;
+}
+
+.howtoplay-section .container {
+	position: relative;
+	max-width: 1100px;
+	margin: 0 auto;
+	z-index: 10;
+}
+
+.step-box {
+	position: relative;
+	background-color: #070B31;
+	padding: 55px 40px 40px;
+	border-radius: 10px;
+	margin-right: 6px;
+	height: 100%;
+}
+
+.howtoplay-section .row .col-md-4:last-child .step-box {
+	margin-right: 0;
+}
+
+.step-box::after {
+	content: '';
+	position: absolute;
+	background: url('../image/icon-right-arrow.png') no-repeat center right;
+	background-size: cover;
+	top: 27%;
+	right: -16%;
+	width: 124px;
+	height: 28px;
+	z-index: 99;
+}
+
+.howtoplay-section .row .col-md-4:last-child .step-box::after {
+	display: none;
+}
+
+.step-no {
+	content: '';
+	position: absolute;
+	top: 6%;
+	right: 8%;
+	font-family: var(--secondary-font);
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1.1em;
+	color: #3C4061;
+}
+
+.howtoplay-section .step-box .step-icon {
+	margin-bottom: 30px;
+}
+
+.howtoplay-section .step-box .step-content h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.howtoplay-section .step-box .step-content p {
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+/*************************************/
+/*** 		08. Top Slot css	   ***/
+/*************************************/
+
+.topslot-section {
+	position: relative;
+	padding: 100px 0 70px;
+}
+
+.topslot-section .container {
+	position: relative;
+	z-index: 10;
+}
+
+.topslot-section .col-md-3 {
+	margin-bottom: 30px;
+}
+
+.topslot-section .slot-item {
+	border-radius: 10px;
+	padding: 2px;
+	transition: var(--transition);
+}
+
+.slot-item .slot-header,
+.slot-item .slot-body {
+	position: relative;
+	z-index: 1;
+}
+
+.slot-item .slot-header .slot-img {
+	position: relative;
+	border-radius: 10px 10px 0 0;
+	transition: var(--transition);
+}
+
+.slot-item .slot-header .slot-img::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #080E3799;
+	background-size: cover;
+	z-index: 5;
+	opacity: 0;
+	transition: var(--transition);
+}
+
+.slot-item:hover .slot-header .slot-img::before {
+	opacity: 1;
+}
+
+.slot-item .slot-header .slot-img img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.slot-item .slot-header .slot-playnow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	opacity: 0;
+	transition: var(--transition);
+	z-index: 10;
+}
+
+.slot-item:hover .slot-header .slot-playnow {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.slot-item .slot-body {
+	padding: 30px;
+	background-color: #00062C;
+	border-radius: 0 0 10px 10px;
+}
+
+.slot-item .slot-body h3 {
+	font-size: 22px;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+
+.slot-item .slot-body p {
+	font-size: 16px;
+	line-height: 1.1em;
+}
+
+/*************************************/
+/***	09. Trusted Casino css	   ***/
+/*************************************/
+
+.trusted-casino-section {
+	position: relative;
+	padding: 100px 0 70px;
+	background-color: var(--body-secondary-background);
+}
+
+.trusted-casino-section .container {
+	position: relative;
+	z-index: 10;
+}
+
+.trusted-casino-section .row .col-md-7 .col-md-6 {
+	margin-bottom: 27px;
+}
+
+.trusted-casino-section .trusted-item {
+	position: relative;
+}
+
+.trusted-item .trusted-item-img img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.trusted-item .trusted-item-content {
+	position: absolute;
+	top: auto;
+	left: 0;
+	bottom: 20px;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 30px;
+}
+
+.trusted-item .trusted-item-content h3 {
+	font-size: 22px;
+}
+
+.trusted-item .trusted-item-content .trusted-item-link a {
+	display: inline-block;
+}
+
+.trusted-item .trusted-item-content .trusted-item-link a i {
+	font-family: "Font Awesome 6 Free";
+	font-size: 25px;
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
+	border-radius: 10px;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition);
+}
+
+.trusted-item .trusted-item-content .trusted-item-link a i:hover {
+	color: var(--secondary-color);
+	background-color: var(--body-primary-background);
+}
+
+/************************************/
+/*** 	10. Testimonial css  	  ***/
+/************************************/
+
+.testimonial-section {
+	position: relative;
+	padding: 100px 0;
+}
+
+.testimonial-section .container {
+	position: relative;
+	z-index: 10;
+}
+
+.testimonial-slider-wrapper .testimonial-slider {
+	padding-bottom: 50px;
+}
+
+.testimonial-slider-wrapper .swiper-slide {
+	background-color: #070B31;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-slide {
+	position: relative;
+	z-index: 1;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-slide::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	background: url("../image/icon-quote.png") no-repeat;
+	background-size: cover;
+	width: 24px;
+	height: 20px;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-header img {
+	border-radius: 50%;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-header h3 {
+	font-size: 22px;
+	margin: 15px 0 6px;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-header p {
+	font-size: 16px;
+	opacity: 50%;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-body {
+	margin: 20px 0 30px;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-body p {
+	font-size: 16px;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-footer .rating {
+	display: inline-flex;
+}
+
+.testimonial-slider-wrapper .swiper-slide .testimonial-footer .rating i {
+	font-family: "Font Awesome 6 Free";
+	font-size: 14px;
+	color: var(--primary-color);
+	background-color: #F65D07;
+	border-radius: 2px;
+	width: 22px;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px;
+	margin-right: 8px;
+}
+
+.testimonial-slider-wrapper .swiper-pagination {
+	bottom: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.testimonial-slider-wrapper .swiper-pagination span {
+	background-color: #3C4061;
+	width: 14px;
+	height: 14px;
+	opacity: 1;
+	margin: 0 5px !important;
+}
+
+.testimonial-slider-wrapper .swiper-pagination span.swiper-pagination-bullet-active {
+	background-color: var(--primary-color);
+}
+
+/************************************/
+/*** 	11. Recent Posts css  	  ***/
+/************************************/
+
+.recent-post-section {
+	position: relative;
+	padding: 100px 0 76px;
+	background-color: var(--body-secondary-background);
+}
+
+.recent-post-section .container {
+	position: relative;
+	z-index: 1;
+}
+
+.post-item {
+	padding: 2px;
+	margin-bottom: 24px;
+}
+
+.post-item .post-img,
+.post-item .post-content {
+	position: relative;
+	z-index: 1;
+}
+
+.post-item .post-img a {
+	display: inline-block;
+}
+
+.post-item .post-img a img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.post-item .post-content {
+	background-color: #00062C;
+	padding: 30px;
+	border-radius: 0 0 10px 10px;
+}
+
+.post-item .post-header .post-meta ul {
+	list-style-type: none;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+
+.post-item .post-header .post-meta ul li {
+	font-size: 14px;
+	line-height: 1.7em;
+	opacity: 0.5;
+}
+
+.post-item .post-header .post-meta ul li i {
+	font-family: "Font Awesome 6 Free";
+	font-size: 14px;
+	margin-right: 5px;
+}
+
+.post-item .post-header a {
+	display: inline-block;
+}
+
+.post-item .post-header h2{
+	font-size: 22px;
+	line-height: 1.2em;
+	color: var(--primary-color);
+}
+
+.post-item .post-header h2 a{
+	color: inherit;
+}
+
+.post-item .post-body p {
+	font-size: 16px;
+}
+
+.post-item .post-footer {
+	margin-top: 20px;
+}
+
+.post-item .post-footer a {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--primary-color);
+	transition: var(--transition);
+	display: inline-flex;
+	align-items: center;
+}
+
+.post-item .post-footer a:hover {
+	color: var(--secondary-color);
+}
+
+.post-item .post-footer a i {
+	font-size: 16px;
+	color: var(--secondary-color);
+}
+
+.post-item .post-footer a i::before {
+	position: relative;
+	top: 1px;
+	margin-left: 5px;
+}
+
+/************************************/
+/*** 		12. FAQs css  		  ***/
+/************************************/
+
+.faq-section {
+	position: relative;
+	padding: 100px 0;
+}
+
+.faq-section .container {
+	position: relative;
+	z-index: 1;
+}
+
+.faq-accordion .accordion-item {
+	background: none;
+	border: none;
+	margin-bottom: 25px;
+}
+
+.faq-accordion .accordion-item:last-child {
+	margin-bottom: 0;
+}
+
+.faq-accordion .accordion-item .accordion-header {
+	padding: 3px;
+}
+
+.faq-accordion .accordion-item .accordion-button {
+	font-family: var(--secondary-font);
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.1em;
+	background-color: #070B31;
+	color: var(--primary-color);
+	border: none;
+	border-radius: 10px !important;
+	box-shadow: none;
+	padding: 20px 50px 20px 30px;
+	position: relative;
+}
+
+.faq-accordion .accordion-item .accordion-button::after,
+.faq-accordion .accordion-item .accordion-button.collapsed::after {
+	content: '\f068';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	bottom: auto;
+	transform: translate(-20px, -11px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Font Awesome 6 Free";
+	font-size: 16px;
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
+	width: 22px;
+	height: 22px;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.faq-accordion .accordion-item .accordion-button.collapsed::after {
+	content: '\2b';
+}
+
+.faq-accordion .accordion-item .accordion-button:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.faq-accordion .accordion-item .accordion-collapse .accordion-body {
+	padding: 15px 30px;
+}
+
+.faq-accordion .accordion-item .accordion-collapse .accordion-body p {
+	width: 80%;
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+/************************************/
+/***	   13. Footer css  		  ***/
+/************************************/
+
+.scrolling-ticker {
+	padding: 12px 0;
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
+}
+
+.scrolling-ticker-box {
+	--gap: 30px;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	user-select: none;
+	gap: var(--gap);
+}
+
+.scrolling-content {
+	flex-shrink: 0;
+	display: flex;
+	gap: var(--gap);
+	min-width: 100%;
+	animation: scroll 24s linear infinite;
+}
+
+.scrolling-content span {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--secondary-font);
+	font-size: 40px;
+	line-height: 1.1em;
+	font-weight: 600;
+}
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(calc(-100% - var(--gap)));
+	}
+}
+
+.scrolling-content span img {
+	margin-right: 15px;
+}
+
+.footer-mega {
+	padding: 80px 0 60px;
+	background-color: var(--body-secondary-background);
+}
+
+.footer-about {
+	padding-right: 30px;
+	border-right: 1px solid #21285F;
+}
+
+.footer-about .footer-logo {
+	margin-bottom: 30px;
+}
+
+.footer-about .footer-payment-method h2 {
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+
+.footer-about .footer-payment-method .footer-payment-icon {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer-about .footer-payment-icon .footer-payment-item {
+	background-color: #070B31;
+	width: calc(33.33% - 30px);
+	height: 55px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-about .footer-payment-icon .footer-payment-item:nth-of-type(3n + 3) {
+	margin-right: 0;
+}
+
+.footer-mega .row .col-lg-5 .row {
+	height: 100%;
+}
+
+.footer-mega .footer-links {
+	padding: 0 40px;
+	border-right: 1px solid #21285F;
+	height: 100%;
+}
+
+.footer-mega .footer-links h2,
+.footer-mega .follow-us h2 {
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+
+.footer-mega .footer-links ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-mega .footer-links ul li {
+	font-size: 16px;
+	line-height: 1.7em;
+	color: var(--text-color);
+	margin-bottom: 8px;
+	padding-left: 20px;
+	transition: var(--transition);
+	position: relative;
+}
+
+.footer-mega .footer-links ul li::before {
+	content: '\f0da';
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: "Font Awesome 6 Free";
+	font-size: 16px;
+	font-weight: 900;
+	color: var(--primary-color);
+}
+
+.footer-mega .footer-links ul li:hover {
+	color: var(--secondary-color);
+}
+
+.footer-mega .footer-links ul li a {
+	color: inherit;
+}
+
+.footer-mega .follow-us {
+	padding: 0 30px;
+}
+
+.footer-mega .follow-us ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-mega .follow-us ul li {
+	font-size: 16px;
+	line-height: 1.7em;
+	color: var(--primary-color);
+	margin-bottom: 20px;
+}
+
+.footer-mega .follow-us ul li:last-child {
+	margin-bottom: 0;
+}
+
+.footer-mega .follow-us ul li a {
+	color: inherit;
+	transition: all 0.3s ease-in-out;
+}
+
+.footer-mega .follow-us ul li a i {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	font-family: "Font Awesome 6 Brands";
+	font-size: 16px;
+	font-weight: 400;
+	width: 36px;
+	height: 36px;
+	border-radius: 5px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	transition: all 0.3s ease-in-out;
+}
+
+.footer-mega .follow-us ul li a:hover i {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+.footer-mega .footer-casino-logos {
+	border-top: 1px solid #21285F;
+	margin-top: 60px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.footer-mega .footer-casino-logos img {
+	aspect-ratio: 1/0.53;
+	margin-top: 20px;
+	margin-right: 50px;
+}
+
+.footer-copyright {
+	padding: 20px 0;
+}
+
+.footer-copyright .copyright-text p,
+.footer-copyright .ssl-note p {
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+.footer-copyright .ssl-note p i {
+	font-family: "Font Awesome 6 Free";
+	font-size: 16px;
+	font-weight: 900;
+	margin-right: 6px;
+	color: var(--primary-color);
+}
+
+/************************************/
+/***  	  14. About us css		  ***/
+/************************************/
+
+.subpage-header {
+	padding: 100px 0;
+	background-image: url('../image/subpage-hero-img.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 10;
+}
+
+.subpage-header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--body-primary-background);
+	background-size: cover;
+	opacity: 0.9;
+}
+
+.subpage-header .container {
+	position: relative;
+	z-index: 1;
+}
+
+.subpage-header-box {
+	text-align: center;
+}
+
+.subpage-header-box h1 {
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 1.1em;
+	text-transform: capitalize;
+	text-shadow: 2px 2px 0px rgba(255, 0, 82, 0.70);
+	color: var(--primary-color);
+}
+
+.subpage-header-box ul {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0 0;
+}
+
+.subpage-header-box ul li {
+	font-size: 16px;
+	line-height: 1.7em;
+	margin-right: 30px;
+}
+
+.subpage-header-box ul li:last-child {
+	margin-right: 0;
+}
+
+.subpage-header-box ul li a {
+	position: relative;
+	color: inherit;
+	transition: var(--transition);
+}
+
+.subpage-header-box ul li a:hover {
+	color: var(--secondary-color);
+}
+
+.subpage-header-box ul li a::before {
+	content: '\f061';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	font-family: 'Font Awesome 6 Free';
+	font-size: 16px;
+	font-weight: 900;
+	color: var(--primary-color);
+	transform: translate(22px, -1px);
+}
+
+.about-information {
+	padding: 100px 0;
+	position: relative;
+}
+
+.about-information .container {
+	position: relative;
+	z-index: 1;
+}
+
+.about-info-img {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-info-img img {
+	border-radius: 1000px 1000px 0 0;
+	width: calc(50% - 10px);
+	margin-right: 20px;
+}
+
+.about-info-img img:nth-of-type(2n + 2) {
+	margin-right: 0;
+}
+
+.about-body {
+	padding-left: 20px;
+}
+
+.about-body .section-title {
+	margin-bottom: 20px;
+}
+
+.about-body .about-content p {
+	font-size: 16px;
+}
+
+.about-body .about-content ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 30px 0;
+}
+
+.about-body .about-content ul li {
+	font-family: var(--secondary-font);
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: capitalize;
+	line-height: 1.3em;
+	color: var(--primary-color);
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #FFFFFF1A;
+}
+
+.about-body .about-content ul li:last-child {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border: none;
+}
+
+.about-body .about-content ul li span {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.1em;
+	margin-right: 20px;
+	color: #6B7078;
+}
+
+.advantage-section {
+	position: relative;
+	padding: 100px 0;
+	background-color: var(--body-secondary-background);
+}
+
+.advantage-section .container {
+	position: relative;
+	z-index: 1;
+}
+
+.advantage-step-box {
+	background-color: #070B31;
+	border-radius: 10px;
+	padding: 30px;
+	height: 100%;
+}
+
+.advantage-step-box .step-icon,
+.advantage-step-box .step-content {
+	position: relative;
+	z-index: 1;
+}
+
+.advantage-step-box .step-icon {
+	margin-bottom: 30px;
+}
+
+.advantage-step-box .step-content h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.advantage-step-box .step-content p {
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+.funfact-section {
+	position: relative;
+	padding: 100px 0;
+}
+
+.funfact-section .container {
+	position: relative;
+	z-index: 1;
+}
+
+.funfact-section .section-title {
+	margin-bottom: 30px;
+	padding-right: 40px;
+}
+
+.funfact-section .funfact-box {
+	background-color: #070B31;
+	padding: 30px;
+	margin-bottom: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.funfact-section .funfact-icon,
+.funfact-section .funfact-content {
+	position: relative;
+	z-index: 1;
+}
+
+.funfact-section .funfact-icon {
+	width: 30%;
+}
+
+.funfact-section .funfact-content {
+	width: 70%;
+	padding-left: 20px;
+}
+
+.funfact-section .funfact-content span {
+	font-family: var(--secondary-font);
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1.1em;
+	color: var(--primary-color);
+}
+
+.funfact-section .funfact-content p {
+	font-size: 16px;
+	color: var(--text-color);
+	margin-top: 10px;
+}
+
+.info-bar-box {
+	background-color: #070B31;
+	padding: 2px 40px 2px;
+	margin-top: 100px;
+	margin-bottom: 30px;
+}
+
+.info-bar-box>.row {
+	position: relative;
+	z-index: 1;
+}
+
+.info-bar-box .section-title {
+	padding: 40px 40px 0 0;
+}
+
+.info-bar-box .section-title p {
+	max-width: none;
+}
+
+.info-bar-box .btn-section {
+	padding-bottom: 34px;
+}
+
+.info-bar-box .info-bar-img {
+	margin-top: -58px;
+}
+
+.info-bar-box .info-bar-img img {
+	width: 75%;
+}
+
+.info-box {
+	padding: 2px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.info-box .info-box-img {
+	position: relative;
+}
+
+.info-box .info-box-img::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background: linear-gradient(90deg, #080E37D4 0%, #080E3700 56.75%);
+	background-size: cover;
+}
+
+.info-box .info-box-img img {
+	border-radius: 10px;
+	width: 100%;
+}
+
+.info-box .info-box-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	transform: translate(40px, 40px);
+	display: table;
+	z-index: 1;
+}
+
+.info-box .info-box-content h3 {
+	font-size: 50px;
+	color: var(--secondary-color);
+	margin-bottom: 10px;
+}
+
+.info-box .info-box-content p {
+	font-size: 18px;
+	color: var(--primary-color);
+	margin-bottom: 15px;
+}
+
+/**************************************/
+/*** 	  15. Online Games css		***/
+/**************************************/
+
+.gameslot-section {
+	padding: 100px 0 76px;
+	position: relative;
+}
+
+.gameslot-section .container {
+	position: relative;
+	z-index: 1;
+}
+
+.gameslot-category-itme h3,
+.gameslot-category-itme ul {
+	position: relative;
+	z-index: 1;
+}
+
+.gameslot-category-itme {
+	background-color: #00062C;
+	border-radius: 10px;
+	padding: 30px;
+}
+.gameslot-category-itme.sidebar {
+	position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+}
+
+.gameslot-category-itme h3 {
+	font-size: 22px;
+	border-bottom: 1px solid #FFFFFF1A;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.gameslot-category-itme ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.gameslot-category-itme ul li {
+	display: flex;
+	align-content: center;
+	font-size: 16px;
+	color: var(--text-color);
+	margin-bottom: 15px;
+	transition: var(--transition);
+}
+
+.gameslot-category-itme ul li:last-child {
+	margin-bottom: 0;
+}
+
+.gameslot-category-itme ul li img {
+	width: 15px;
+	height: 18px;
+	margin-right: 12px;
+}
+
+.gameslot-category-itme ul li a {
+	transition: var(--transition);
+	color: inherit;
+}
+
+.gameslot-category-itme ul li a:hover {
+	color: var(--secondary-color);
+}
+
+.gameslot-section .slot-item {
+	padding: 2px;
+	margin-bottom: 24px;
+}
+
+/***********************************/
+/***	 16. Promotions css		 ***/
+/***********************************/
+
+.promotions-section {
+	padding: 100px 0 76px;
+	position: relative;
+}
+
+.promotions-section .container {
+	position: relative;
+	z-index: 1;
+}
+
+.promotions-section .slot-item {
+	padding: 2px;
+	margin-bottom: 24px;
+}
+
+.promotions-section .slot-item .slot-header,
+.promotions-section .slot-item .slot-body {
+	position: relative;
+	z-index: 1;
+}
+
+.promotions-section .slot-item .slot-header img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.promotions-section .slot-item .slot-body h4 {
+	font-size: 30px;
+	color: var(--secondary-color);
+	margin-bottom: 5px;
+}
+
+.promotions-section .slot-item .slot-body p {
+	font-size: 14px;
+	color: var(--text-color);
+	margin-bottom: 20px;
+}
+
+/********************************/
+/***	17. Contact Us css	  ***/
+/********************************/
+
+.page-contact-us {
+	padding: 100px 0;
+	position: relative;
+}
+
+.page-contact-us .container {
+	position: relative;
+	z-index: 1;
+}
+
+.page-contact-us .section-title {
+	margin-bottom: 40px;
+}
+
+.page-contact-us .section-title h2 {
+	font-size: 40px;
+}
+
+.page-contact-us .contact-infomation-box {
+	padding: 30px;
+	margin-bottom: 24px;
+	background-color: #070B31;
+}
+
+.contact-infomation-box .contact-info-icon,
+.contact-infomation-box .contact-info-body {
+	position: relative;
+	z-index: 1;
+}
+
+.contact-infomation-box .contact-info-icon {
+	margin-bottom: 20px;
+}
+
+.contact-infomation-box .contact-info-icon img {
+	width: 60px;
+	height: 60px;
+}
+
+.contact-infomation-box .contact-info-body h3 {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+.contact-infomation-box .contact-info-body p {
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+.contact-infomation-box .contact-info-body p a {
+	color: inherit;
+	transition: var(--transition);
+}
+
+.contact-infomation-box .contact-info-body p a:hover {
+	color: var(--secondary-color);
+}
+
+.contact-follow-us h2 {
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: capitalize;
+	text-shadow: 2px 2px 0px rgba(255, 0, 82, 0.70);
+	color: var(--primary-color);
+	margin: 16px 0 20px;
+}
+
+.contact-follow-us .follow-us-icon ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.contact-follow-us .follow-us-icon ul li {
+	margin-right: 20px;
+}
+
+.contact-follow-us .follow-us-icon ul li:last-child {
+	margin-right: 0;
+}
+
+.contact-follow-us .follow-us-icon ul li a {
+	display: inline-block;
+	color: inherit;
+	transition: var(--transition);
+}
+
+.contact-follow-us .follow-us-icon ul li a i {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	font-family: "Font Awesome 6 Brands";
+	font-size: 22px;
+	font-weight: 400;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.contact-follow-us .follow-us-icon ul li a i:hover {
+	color: var(--secondary-color);
+	background-color: var(--primary-color);
+}
+
+.page-contact-us .contact-form-box {
+	background-color: #070B31;
+	padding: 40px;
+	margin-left: 10px;
+}
+
+.page-contact-us .contact-form-box .section-title,
+.page-contact-us .contact-form-box .contact-form {
+	position: relative;
+	z-index: 1;
+}
+
+.contact-form-box .section-title {
+	margin-bottom: 50px;
+}
+
+.contact-form-box .contact-form .form-group .form-control {
+	font-size: 16px;
+	line-height: 1.7em;
+	color: var(--text-color);
+	background-color: #FFFFFF00;
+	border: 1px solid #FFFFFF36;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+.contact-form-box .contact-form .form-group .form-control:focus,
+.contact-form-box .contact-form button.btn-default {
+	outline: none;
+	box-shadow: none;
+}
+
+.contact-form-box .contact-form .form-group .form-control::placeholder {
+	opacity: 1;
+	color: var(--text-color);
+}
+
+.contact-form-box .contact-form .form-group .help-block.with-errors ul {
+	margin-bottom: 0;
+}
+
+.contact-form-box .contact-form .form-group .help-block.with-errors ul li {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.1em;
+	text-transform: capitalize;
+	margin-top: 2px;
+	color: var(--secondary-color);
+}
+
+#msgSubmit{
+	font-size: 18px;
+	margin: 20px 0 0; 
+}
+
+.contact-form-box .contact-form button.btn-default {
+	text-align: center;
+	border: 0;
+}
+
+.google-map {
+	line-height: 0;
+}
+
+.google-map iframe {
+	width: 100%;
+	height: 500px;
+}
+
+.google-map .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.google-map .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.google-map .row > * {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/**********************************/
+/***	18. Blog Archive css 	***/
+/**********************************/
+
+.blog-post-lists{
+	padding: 100px 0;
+}
+
+
+/**********************************/
+/***	19. Blog Single css 	***/
+/**********************************/
+
+.blog-single-header .container {
+	max-width: 1170px;
+}
+
+.page-blog-single {
+	padding: 100px 0;
+}
+
+.page-blog-single .container {
+	max-width: 1170px;
+}
+
+.post-feature-image {
+	margin-bottom: 40px;
+}
+
+.post-feature-image img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.single-post-content {
+	max-width: 1080px;
+}
+
+.post-soical-link {
+	background-color: #070B31;
+	border-radius: 10px;
+	padding: 30px;
+	margin-right: 40px;
+}
+
+.post-soical-link.sidebar {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 30px;
+}
+
+.post-soical-link ul {
+	position: relative;
+	z-index: 1;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.post-soical-link ul li {
+	margin-bottom: 20px;
+}
+
+.post-soical-link ul li:last-child {
+	margin-bottom: 0;
+}
+
+.post-soical-link ul li a {
+	display: inline-block;
+	color: inherit;
+}
+
+.post-soical-link ul li a i {
+	font-family: "Font Awesome 6 Brands";
+	font-weight: 400;
+	font-size: 20px;
+	color: var(--primary-color);
+	background-color: #FFFFFF0D;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	transition: var(--transition);
+}
+
+.post-soical-link ul li a i:hover {
+	color: var(--secondary-color);
+	background-color: var(--primary-color);
+}
+
+.post-entry {
+	margin-bottom: 40px;
+}
+
+.post-entry h2,
+.post-entry h3,
+.post-entry h4 .post-entry ul,
+.post-entry p {
+	margin-bottom: 20px;
+}
+
+.post-entry h2 {
+	font-size: 30px;
+	color: var(--primary-color);
+}
+
+.post-entry h3 {
+	font-size: 26px;
+	color: var(--primary-color);
+}
+
+.post-entry h4 {
+	font-size: 22px;
+	color: var(--primary-color);
+}
+
+.post-entry p {
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+.post-entry blockquote {
+	font-size: 16px;
+	line-height: 1.7em;
+	background-color: #070B31;
+	color: var(--text-color);
+	padding: 22px 30px;
+	margin-bottom: 20px;
+}
+
+.post-entry blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+.post-entry ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.post-entry ul li {
+	font-size: 16px;
+	color: var(--text-color);
+	line-height: 1.7em;
+	padding-left: 25px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.post-entry ul li:last-child {
+	margin-bottom: 0;
+}
+
+.post-entry ul li::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	bottom: 0;
+	background: var(--secondary-color);
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+}
+
+.post-tag {
+	padding: 20px 0 0;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: #FFFFFF1A;
+}
+
+.post-tag ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.post-tag ul li {
+	font-size: 14px;
+	color: var(--text-color);
+	background-color: #070B31;
+	border-radius: 10px;
+	padding: 18px 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	transition: var(--transition);
+}
+
+.post-tag ul li:hover {
+	color: var(--primary-color);
+	background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+	box-shadow: 0px 0px 30px 0px rgba(255, 0, 82, 0.70);
+}
+
+.post-tag ul li:hover::before {
+	background: #FFFFFF00;
+}
+
+.post-tag ul li a {
+	display: inline-block;
+	position: relative;
+	z-index: 10;
+	color: inherit;
+}
+
+.post-btn {
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.post-btn .btn-pre,
+.post-btn .btn-next {
+	background: #070B31;
+	padding: 2px;
+}
+
+.post-btn .btn-pre:hover,
+.post-btn .btn-next:hover {
+	background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+	box-shadow: 0px 0px 30px 0px rgba(255, 0, 82, 0.70);
+	border-radius: 10px;
+}
+
+.post-btn .btn-pre:hover::before,
+.post-btn .btn-next:hover::before {
+	background: #FFFFFF00;
+}
+
+.post-btn a.btn-default {
+	background: #FFFFFF00;
+	box-shadow: none;
+	display: inline-block;
+	position: relative;
+	z-index: 10;
+}
+
+.post-btn .btn-pre a i {
+	color: inherit;
+	margin-right: 8px;
+}
+
+.post-btn .btn-next a i {
+	margin-left: 8px;
+	color: inherit;
+}
+
+/**************************************/
+/***	 20. Page Not Found css		***/
+/**************************************/
+
+.pagenot-found-section {
+	padding: 100px 0;
+}
+
+.pagenot-found-section .pagenot-found-img {
+	margin-bottom: 30px;
+}
+
+.pagenot-found-section .pagenot-found-img img {
+	width: 45%;
+}
+
+.pagenot-found-section .section-title {
+	margin-bottom: 30px;
+}
+
+
+/**************************************/
+/***	 21. Media Query css		***/
+/**************************************/
+
+@media only screen and (max-width: 1024px) {
+    .main-menu ul li {
+        margin: 0 10px;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    #magic-cursor {
+        display: none !important;
+    }
+
+    .btn-default {
+        padding: 16px 18px;
+    }
+
+    .section-title h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .section-title h3 {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .responsive-menu {
+        margin-top: 20px;
+    }
+
+    .responsive-menu {
+        display: block;
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar-brand {
+        width: 20%;
+    }
+
+    header.main-header {
+        padding: 20px 0 0;
+    }
+
+    .hero-section {
+        padding: 80px 0 120px;
+    }
+
+    .hero-section .col-lg-6.col-md-12.order-lg-2 {
+        margin-bottom: 40px;
+    }
+
+    .hero-section .hero-img img {
+        max-width: 80%;
+    }
+
+    .hero-content .section-title h3 {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content .section-title h2 {
+        font-size: 46px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content .hero-body p {
+        margin-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .hero-content .hero-footer .btn-accent {
+        padding: 14px 16px;
+        margin-left: 20px;
+    }
+
+    .jackpot-section {
+        margin-top: -42px;
+        padding-bottom: 20px;
+    }
+
+    .jackpot-section .row {
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .jackpot-section .jackpot-img img {
+        margin-top: -40px;
+    }
+
+    .jackpot-section .jackpot-title h2 {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+
+    .jackpot-section .jackpot-counter {
+        font-size: 38px;
+        padding: 0 5px;
+    }
+
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .about-section::before {
+        background-size: cover;
+        width: 122px;
+        height: 75px;
+        transform: translate(-40px, 40px);
+    }
+
+    .about-section::after,
+    .topslot-section::after,
+    .testimonial-section::after,
+    .faq-section::after,
+    .about-information::after,
+    .funfact-section:after,
+    .promotions-section:after,
+    .page-contact-us::after {
+        width: 450px;
+        height: 450px;
+    }
+
+    .about-section .about-img {
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+
+    .about-section .about-img img {
+        max-width: 80%;
+    }
+
+    .about-section .about-feature-item:last-child {
+        margin-bottom: 0px;
+    }
+
+    .about-section .about-feature-content h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .howtoplay-section {
+        padding: 80px 0;
+    }
+
+    .howtoplay-section::after,
+    .trusted-casino-section::after,
+    .recent-post-section::after,
+    .advantage-section::after,
+    .gameslot-section:after {
+        width: 450px;
+        height: 450px;
+    }
+
+    .step-box {
+        padding: 35px 20px 30px;
+        margin-right: 0px;
+        height: 100%;
+    }
+
+    .step-box::after {
+        display: none;
+    }
+
+    .step-no {
+        top: 5%;
+        right: 8%;
+        font-size: 34px;
+    }
+
+    .step-icon {
+        margin-bottom: 20px;
+    }
+
+    .step-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .step-content h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .topslot-section {
+        position: relative;
+        padding: 80px 0 50px;
+    }
+
+    .topslot-section .col-md-3 {
+        margin-bottom: 20px;
+    }
+
+    .slot-item .slot-body {
+        padding: 20px;
+    }
+
+    .slot-item .slot-body h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .slot-item .slot-body p {
+        font-size: 14px;
+    }
+
+    .trusted-casino-section {
+        padding: 80px 0 60px;
+    }
+
+    .trusted-casino-section .row .col-md-7 .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    .trusted-item .trusted-item-content {
+        bottom: 5px;
+        padding: 10px 15px;
+    }
+
+    .trusted-item .trusted-item-content h3 {
+        font-size: 20px;
+    }
+
+    .trusted-item .trusted-item-content .trusted-item-link a i {
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .testimonial-section {
+        padding: 80px 0;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide {
+        padding: 30px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-slide::before {
+        width: 26px;
+        height: 22px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-header h3 {
+        font-size: 20px;
+        margin: 12px 0 6px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-body {
+        margin: 20px 0;
+    }
+
+    .recent-post-section {
+        padding: 80px 0 56px;
+    }
+
+    .recent-post-section .row .col-lg-4.col-md-6:last-child {
+        margin: 0 auto;
+    }
+
+    .post-item .post-header h2 {
+        font-size: 20px;
+    }
+
+    .faq-section {
+        padding: 80px 0;
+    }
+
+    .faq-accordion .accordion-item .accordion-button {
+        font-size: 20px;
+        padding: 15px 50px 15px 20px;
+    }
+
+    .faq-accordion .accordion-item .accordion-button::after,
+    .faq-accordion .accordion-item .accordion-button.collapsed::after {
+        transform: translate(-20px, -12px);
+    }
+
+    .faq-accordion .accordion-item .accordion-collapse .accordion-body {
+        padding: 15px 20px;
+    }
+
+    .faq-accordion .accordion-item .accordion-collapse .accordion-body p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .scrolling-ticker-box {
+        --gap: 20px;
+        gap: var(--gap);
+    }
+
+    .scrolling-content span {
+        font-size: 30px;
+    }
+
+    .scrolling-content span img {
+        margin-right: 15px;
+    }
+
+    .footer-mega {
+        padding: 60px 0 30px;
+    }
+
+    .footer-mega .row .col-lg-4.col-12 {
+        margin-bottom: 50px;
+    }
+
+    .footer-about {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .footer-about .footer-payment-method h2 {
+        font-size: 20px;
+    }
+
+    .footer-about .footer-payment-method .footer-payment-icon {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-about .footer-payment-icon .footer-payment-item {
+        width: calc(16.67% - 24px);
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .footer-about .footer-payment-icon .footer-payment-item:nth-of-type(3n + 3) {
+        margin-right: 20px;
+    }
+
+    .footer-about .footer-payment-icon .footer-payment-item:nth-of-type(6n + 6) {
+        margin-right: 0;
+    }
+
+    .footer-mega .footer-links h2,
+    .footer-mega .follow-us h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer-mega .footer-casino-logos img {
+        width: calc(20% - 20px);
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    .footer-mega .footer-casino-logos img:nth-of-type(5n + 5) {
+        margin-right: 0;
+    }
+
+    .subpage-header {
+        padding: 80px 0;
+    }
+
+    .subpage-header-box h1 {
+        font-size: 46px;
+    }
+
+    .subpage-header-box ul {
+        margin: 15px 0 0;
+    }
+
+    .about-information {
+        padding: 80px 0;
+    }
+
+    .about-body {
+        padding-top: 30px;
+        padding-left: 0;
+    }
+
+    .advantage-section {
+        padding: 80px 0;
+    }
+
+    .advantage-step-box {
+        padding: 30px 20px;
+    }
+
+    .advantage-step-box .step-icon {
+        margin-bottom: 20px;
+    }
+
+    .advantage-step-box .step-content h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .funfact-section {
+        padding: 80px 0 50px;
+    }
+
+    .funfact-section .row.funfact-header .col-lg-5.col-12 {
+        margin-bottom: 40px;
+    }
+
+    .funfact-section .section-title {
+        margin-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .funfact-section .funfact-icon {
+        width: 24%;
+    }
+
+    .funfact-section .funfact-content {
+        width: 76%;
+    }
+
+    .funfact-section .funfact-content span {
+        font-size: 36px;
+    }
+
+    .info-bar-box {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .info-bar-box .btn-section {
+        padding-bottom: 10px;
+    }
+
+    .info-bar-box .info-bar-img {
+        margin-top: 0;
+    }
+
+    .info-box {
+        margin-bottom: 30px;
+    }
+
+    .pagenot-found-section {
+        padding: 80px 0;
+    }
+
+    .pagenot-found-section .pagenot-found-img {
+        margin-bottom: 30px;
+    }
+
+    .pagenot-found-section .pagenot-found-img img {
+        width: 60%;
+    }
+
+    .gameslot-section {
+        padding: 80px 0 56px;
+    }
+
+    .gameslot-category-itme {
+        padding: 20px;
+    }
+
+    .gameslot-category-itme h3 {
+        font-size: 20px;
+    }
+
+    .gameslot-section .slot-item .slot-body {
+        padding: 20px 10px;
+    }
+
+    .promotions-section {
+        padding: 80px 0 56px;
+    }
+
+    .promotions-section .slot-item .slot-body h4 {
+        font-size: 26px;
+    }
+
+    .promotions-section .slot-item .slot-body .slot-claimnow a {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+
+    .page-contact-us {
+        padding: 80px 0;
+    }
+
+    .page-contact-us .section-title {
+        margin-bottom: 30px;
+    }
+
+    .contact-infomation-box .contact-info-icon {
+        margin-bottom: 18px;
+    }
+
+    .contact-infomation-box .contact-info-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-infomation-box .contact-info-body h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .contact-follow-us .follow-us-icon ul {
+        justify-content: center;
+    }
+
+    .contact-follow-us .follow-us-icon ul li {
+        margin-right: 20px;
+    }
+
+    .contact-follow-us .follow-us-icon ul li a i {
+        font-size: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .page-contact-us .contact-form-box {
+        padding: 40px;
+        margin-top: 60px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .contact-form-box .section-title {
+        margin-bottom: 40px;
+    }
+
+    .google-map iframe {
+        height: 380px;
+    }
+
+	.blog-post-lists{
+		padding: 80px 0;
+	}
+
+    .page-blog-single {
+        padding: 80px 0;
+    }
+
+    .post-feature-image {
+        margin-bottom: 30px;
+    }
+
+    .post-soical-link {
+        padding: 30px;
+        margin-right: 0;
+    }
+
+    .post-entry {
+        margin-bottom: 30px;
+    }
+
+    .post-entry h2 {
+        font-size: 26px;
+    }
+
+    .post-entry h3 {
+        font-size: 24px;
+    }
+
+    .post-entry h4 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .btn-default {
+        font-size: 14px;
+        padding: 14px 16px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+        text-shadow: 1px 1px 0px rgba(255, 0, 82, 0.70);
+        margin-bottom: 20px;
+    }
+
+    .section-title h3 {
+        padding: 8px 16px;
+    }
+
+    .section-title p {
+        font-size: 14px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    .main-header .col-md-4.col-sm-12 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .slicknav_nav li a {
+        font-size: 14px;
+    }
+
+    .slicknav_arrow:after {
+        right: -15px;
+        font-size: 14px;
+        margin-top: -10.5px;
+    }
+
+    .responsive-menu {
+        margin-top: 20px;
+    }
+
+    .slicknav_btn {
+        width: 40px;
+        height: 38px;
+        padding: 6px 0 0;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section .col-lg-6.col-md-12.order-lg-2 {
+        margin-bottom: 30px;
+    }
+
+    .hero-section .hero-img img {
+        max-width: 100%;
+    }
+
+    .hero-content .section-title{
+        text-align: center;
+    }
+
+    .hero-content .section-title h2 {
+        font-size: 28px;
+    }
+
+    .hero-content .hero-body{
+        text-align: center;
+    }
+
+    .hero-content .hero-body p {
+        font-size: 14px;
+    }
+
+    .hero-content .hero-footer{
+        text-align: center;
+    }
+
+    .hero-content .hero-footer .btn-accent {
+        padding: 12px 14px;
+        margin-left: 20px;
+    }
+
+    .jackpot-section {
+        margin-top: 0;
+    }
+
+    .jackpot-section .row {
+        border-radius: 40px;
+        margin: 0 30px;
+        padding: 30px 0 0;
+    }
+
+    .jackpot-section .jackpot-img {
+        margin-top: 30px;
+    }
+
+    .jackpot-section .jackpot-img img {
+        margin-top: 0;
+    }
+
+    .jackpot-section .jackpot-title h2 {
+        font-size: 26px;
+        padding: 25px 10px 0;
+    }
+
+    .jackpot-section .jackpot-counter {
+        font-size: 32px;
+        padding-left: 20px;
+    }
+
+    .about-section {
+        padding: 40px 0 60px;
+    }
+
+    .about-section::before {
+        width: 81px;
+        height: 49.2px;
+        transform: translate(-20px, 10px);
+    }
+
+    .about-section::after,
+    .topslot-section::after,
+    .testimonial-section::after,
+    .faq-section::after,
+    .about-information::after,
+    .funfact-section:after,
+    .promotions-section:after,
+    .page-contact-us::after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-section .about-img img {
+        max-width: 100%;
+    }
+
+    .about-section .about-feature-item {
+        display: block;
+    }
+
+    .about-section .about-feature-icon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-section .about-feature-content {
+        width: 100%;
+    }
+
+    .about-section .about-feature-content h3 {
+        font-size: 18px;
+    }
+
+    .about-section .about-feature-content p {
+        font-size: 14px;
+    }
+
+    .howtoplay-section {
+        padding: 60px 0;
+    }
+
+    .howtoplay-section::after,
+    .trusted-casino-section::after,
+    .recent-post-section::after,
+    .advantage-section::after,
+    .gameslot-section:after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .howtoplay-section .row .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .howtoplay-section .row .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+
+    .howtoplay-section .step-box .step-content h3 {
+        font-size: 18px;
+    }
+
+    .howtoplay-section .step-box .step-content p {
+        font-size: 14px;
+    }
+    
+    .topslot-section {
+        padding: 60px 0 40px;
+    }
+
+    .topslot-section .col-md-3 {
+        margin-bottom: 20px;
+    }
+
+    .slot-item .slot-body {
+        padding: 20px;
+    }
+
+    .slot-item .slot-body h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .slot-item .slot-body p {
+        font-size: 14px;
+    }
+
+    .trusted-casino-section {
+        padding: 60px 0 30px;
+    }
+
+    .trusted-casino-section .row .col-md-5 {
+        margin-bottom: 30px;
+    }
+
+    .trusted-casino-section .row .col-md-7 .col-md-6 {
+        margin-bottom: 30px;
+    }
+
+    .trusted-item .trusted-item-content {
+        bottom: 15px;
+        padding: 10px 20px;
+    }
+
+    .trusted-item .trusted-item-content .trusted-item-link a i {
+        font-size: 22px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .testimonial-section {
+        padding: 60px 0;
+    }
+
+    .testimonial-slider-wrapper .testimonial-slider {
+        padding-bottom: 40px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-header h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-header p {
+        font-size: 14px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-body {
+        margin: 15px 0;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-body p {
+        font-size: 14px;
+    }
+
+    .testimonial-slider-wrapper .swiper-slide .testimonial-footer .rating i {
+        font-size: 12px;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        margin-right: 10px;
+    }
+
+    .testimonial-slider-wrapper .swiper-pagination span {
+        width: 12px;
+        height: 12px;
+    }
+
+    .recent-post-section {
+        padding: 60px 0 36px;
+    }
+
+    .post-item .post-content {
+        padding: 20px;
+    }
+
+    .post-item .post-header .post-meta ul {
+        margin: 0 0 15px 0;
+    }
+
+    .post-item .post-header h2 {
+        font-size: 18px;
+    }
+
+    .post-item .post-body p {
+        font-size: 14px;
+    }
+
+    .post-item .post-footer {
+        margin-bottom: 15px;
+    }
+
+    .post-item .post-footer a {
+        font-size: 14px;
+    }
+
+    .post-item .post-footer a i {
+        font-size: 16px;
+    }
+
+    .post-item .post-footer a i::before {
+        top: 0;
+    }
+
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-accordion .accordion-item .accordion-button {
+        font-size: 16px;
+        padding: 10px 40px 10px 15px;
+    }
+
+    .faq-accordion .accordion-item .accordion-button::after,
+    .faq-accordion .accordion-item .accordion-button.collapsed::after {
+        font-size: 18px;
+        transform: translate(-20px, -10px);
+    }
+
+    .faq-accordion .accordion-item .accordion-collapse .accordion-body {
+        padding: 15px;
+    }
+
+    .faq-accordion .accordion-item .accordion-collapse .accordion-body p {
+        font-size: 14px;
+    }
+
+    .scrolling-content span {
+        font-size: 28px;
+    }
+
+    .scrolling-content span img {
+        margin-right: 10px;
+    }
+
+
+    .footer-mega {
+        padding: 40px 0 30px;
+    }
+
+    .footer-mega .row .col-lg-4.col-12 {
+        margin-bottom: 20px;
+    }
+
+    .footer-about .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-about .footer-payment-method h2 {
+        margin-bottom: 20px;
+    }
+
+    .footer-about .footer-payment-icon .footer-payment-item {
+        width: calc(33.33% - 30px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer-about .footer-payment-icon .footer-payment-item:nth-of-type(3n + 3) {
+        margin-right: 0px;
+    }
+
+    .footer-mega .row .col-lg-5.col-md-8.col-12 .row .col-6:nth-child(2) .footer-links {
+        border: none;
+    }
+
+    .footer-mega .footer-links {
+        padding: 0 10px;
+    }
+
+    .footer-mega .footer-links h2,
+    .footer-mega .follow-us h2 {
+        font-size: 18px;
+    }
+
+    .footer-mega .footer-links ul li {
+        font-size: 14px;
+        margin-bottom: 6px;
+        padding-left: 16px;
+    }
+
+    .footer-mega .footer-links ul li::before {
+        font-size: 14px;
+    }
+
+    .footer-mega .follow-us {
+        padding: 40px 10px 0;
+    }
+
+    .footer-mega .follow-us ul {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-mega .follow-us ul li {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .footer-mega .follow-us ul li:nth-of-type(2n + 2) {
+        margin-right: 0;
+    }
+
+    .footer-mega .follow-us ul li a i {
+        font-size: 14px;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        margin-right: 6px;
+    }
+
+    .footer-mega .footer-casino-logos {
+        margin-top: 20px;
+    }
+
+    .footer-mega .footer-casino-logos img {
+        width: calc(25% - 26.67px);
+        margin-right: 20px;
+    }
+
+    .footer-mega .footer-casino-logos img:nth-of-type(4n + 4) {
+        margin-right: 0;
+    }
+
+    .footer-mega .footer-casino-logos img:nth-of-type(5n + 5) {
+        margin-right: 20px;
+    }
+
+    .footer-copyright {
+        padding: 15px 0;
+    }
+
+    .footer-copyright .copyright-text {
+        margin-bottom: 10px;
+    }
+
+    .footer-copyright .copyright-text p,
+    .footer-copyright .ssl-note p {
+        font-size: 14px;
+    }
+
+    .footer-copyright .ssl-note p i {
+        font-size: 14px;
+    }
+
+    .subpage-header {
+        padding: 60px 0;
+    }
+
+    .subpage-header-box h1 {
+        font-size: 34px;
+    }
+
+    .subpage-header-box ul {
+        margin: 10px 0 0;
+    }
+
+    .subpage-header-box ul li {
+        font-size: 14px;
+        margin-right: 22px;
+    }
+
+    .subpage-header-box ul li a::before {
+        font-size: 12px;
+        transform: translate(16px, -1px);
+    }
+
+    .about-information {
+        padding: 60px 0;
+    }
+
+    .about-body .about-content p {
+        font-size: 14px;
+    }
+
+    .about-body .about-content ul {
+        margin: 20px 0;
+    }
+
+    .about-body .about-content ul li {
+        font-size: 16px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .about-body .about-content ul li span {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .advantage-section {
+        padding: 60px 0 40px;
+    }
+
+    .advantage-section .row .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .advantage-step-box {
+        padding: 30px 20px;
+    }
+
+    .advantage-step-box .step-content h3 {
+        font-size: 18px;
+    }
+
+    .advantage-step-box .step-content p {
+        font-size: 14px;
+    }
+
+    .funfact-section {
+        padding: 60px 0 40px;
+    }
+
+    .funfact-section .row.funfact-header .col-lg-5.col-12 {
+        margin-bottom: 30px;
+    }
+
+    .funfact-section .funfact-box {
+        display: block;
+        padding: 20px 15px;
+    }
+
+    .funfact-section .funfact-icon {
+        width: 100%;
+        text-align: center;
+    }
+
+    .funfact-section .funfact-icon img {
+        width: 50%;
+    }
+
+    .funfact-section .funfact-content {
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+        padding-left: 0;
+    }
+
+    .funfact-section .funfact-content span {
+        font-size: 32px;
+    }
+
+    .funfact-section .funfact-content p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .info-bar-box {
+        padding: 2px 20px 2px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-bar-box .section-title {
+        padding: 20px 0 0 0;
+    }
+
+    .info-bar-box .info-bar-img img {
+        width: 100%;
+    }
+
+    .info-box {
+        margin-bottom: 20px;
+    }
+
+    .info-box .info-box-content {
+        transform: translate(20px, 20px);
+    }
+
+    .info-box .info-box-content h3 {
+        font-size: 34px;
+        margin-bottom: 5px;
+    }
+
+    .info-box .info-box-content p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .info-box .info-box-content .btn-default {
+        font-size: 12px;
+        padding: 10px 14px;
+    }
+
+    .pagenot-found-section {
+        padding: 60px 0;
+    }
+
+    .pagenot-found-section .pagenot-found-img img {
+        width: 95%;
+    }
+
+    .pagenot-found-section .section-title {
+        margin-bottom: 20px;
+    }
+
+    .gameslot-section {
+        padding: 60px 0;
+    }
+
+	.gameslot-category-itme {
+		margin-bottom: 30px;
+	}
+
+    .gameslot-category-itme h3 {
+        font-size: 18px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .gameslot-category-itme ul li {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .gameslot-section .slot-item .slot-body {
+        padding: 20px;
+    }
+
+    .promotions-section {
+        padding: 60px 0 36px;
+    }
+
+    .promotions-section .slot-item .slot-body .slot-claimnow a {
+        font-size: 14px;
+        padding: 14px 18px;
+    }
+
+    .page-contact-us {
+        padding: 60px 0;
+    }
+
+	.page-contact-us .section-title h2{
+		font-size: 30px;
+	}
+
+    .contact-infomation-box .contact-info-body h3 {
+        font-size: 18px;
+    }
+
+    .contact-infomation-box .contact-info-body p {
+        font-size: 14px;
+    }
+
+    .contact-follow-us h2 {
+        font-size: 30px;
+    }
+
+    .contact-follow-us .follow-us-icon ul li a i {
+        font-size: 16px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .page-contact-us .contact-form-box {
+        padding: 30px 20px;
+        margin-top: 40px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .contact-form-box .section-title {
+        margin-bottom: 30px;
+    }
+
+    .contact-form-box .contact-form .form-group .form-control {
+        font-size: 14px;
+    }
+
+    .contact-form-box .contact-form .form-group .help-block.with-errors ul li {
+        font-size: 12px;
+    }
+
+    .google-map iframe {
+        height: 300px;
+    }
+
+	.blog-post-lists{
+		padding: 60px 0;
+	}
+
+    .page-blog-single {
+        padding: 60px 0;
+    }
+
+    .post-soical-link {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+	.post-soical-link ul {
+		justify-content: space-between;
+	}
+
+    .post-soical-link ul li {
+        margin: 0 5px;
+        text-align: center;
+    }
+
+    .post-soical-link ul li a i {
+        font-size: 16px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .post-entry h2 {
+        font-size: 24px;
+    }
+
+    .post-entry h3 {
+        font-size: 22px;
+    }
+
+    .post-entry h4 {
+        font-size: 18px;
+    }
+
+    .post-entry p {
+        font-size: 14px;
+    }
+
+    .post-entry blockquote {
+        font-size: 14px;
+        padding: 18px 25px;
+        margin-bottom: 20px;
+    }
+
+    .post-entry ul li {
+        font-size: 14px;
+    }
+
+    .post-tag ul li {
+        font-size: 14px;
+        padding: 16px 18px;
+        text-align: center;
+        width: calc(50% - 20px);
+        margin-right: 20px;
+    }
+
+    .post-tag ul li:nth-of-type(2n + 2) {
+        margin-right: 0;
+    }
+
+    .post-btn .btn-pre a i {
+        margin-right: 5px;
+    }
+
+    .post-btn .btn-next a i {
+        margin-left: 5px;
+    }
+}
