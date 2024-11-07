@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var obj = {
+            nameArr: ["小明", "刘松", "张勇", "孙强", "贺北", "曹丕", "赵维富"],
+            init: function () {
+                var count1 = Math.floor(Math.random() * 7);
+                var count2 = Math.floor(Math.random() * 7);//[0，7)向下取整[0.var count2=Math.floor(Math.random()*7);//[0，7)向下取整[0,
+                while (count1 == count2) {
+                  count2 = Math.floor(Math.random() * 7);
+                }
+                // 用下标，输出两个名字
+                console.log(this.nameArr[count1], this.nameArr[count2]);
+            }
+        }
+        obj.init();              
+    </script>
+</body>
+
+</html>

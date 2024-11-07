@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box{
+            border: 1px solid black;
+            width: 400px;
+        }
+        .header{
+            text-align: center;
+        }
+        .bot{
+            display: flex;
+        }
+
+        .top{
+            width: 400px;
+            border: 1px solid black;
+        }
+
+        .top>input{
+            outline: none;
+            border: none;
+        }
+
+        .undone,.done{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        .bot p{
+            text-align: center;
+        }
+
+        .item{
+            border: 1px solid black;
+            display:inline-block ;
+            padding: 2px;
+        }
+
+       
+    </style>
+    <script src="./jq/jQuery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="header">日程表</div>
+        <div class="top">
+            <input type="text" placeholder="请输入要添加的内容">
+        </div>
+        <div class="bot">
+            
+            <div class="undone">
+                <p>未完成</p>
+                <div class="item">读书</div>
+                <div class="item">打游戏</div>
+            </div>
+
+            <div class="done">
+                <p>已完成</p>
+                <div class="item">打游戏 <span>x</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 输入框事件
+    $('.top input').keydown(function(event){
+        if($(this).val() !== '' && event.keyCode == 13){
+            
+            // 添加输入框的内容到未完成事件中
+            $(`<div class='item'>${$(this).val()}</div>`).appendTo($('.undone'))
+
+            // 清空输入框
+            $(this).val('')
+
+        }
+    })
+
+    // 未完成事件 (事件委托) 给动态创建的元素绑定事件
+    console.log($('.undone .item'));
+    // 事件委托 父级元素.on('事件类型','委托元素',处理器方法)
+    $('.undone').on('click','.item',function(){
+        console.log('点击成功');
+        // 将未完成添加到已完成
+        $(this).append($('<span>x</span>')).appendTo($('.done'))
+    })
+    
+
+    // 已完成事件
+    $('.done').on('click','span',function(){
+        // console.log('删除');
+        
+        $(this).parent().remove()
+    })
+</script>
+</html>

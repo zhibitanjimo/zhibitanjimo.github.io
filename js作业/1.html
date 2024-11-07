@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function peach(n) {
+            // 递归终止条件：如果只剩下1天，返回1个桃子
+            if (n === 1) {
+                return 1;
+            }
+            // 递归计算前一天的桃子数量
+            // 根据题意，前一天的桃子数量 = (当前天的桃子数量 + 1) * 2
+            return (peach(n - 1) + 1) * 2;
+        }
+
+        // 测试函数
+        console.log(peach(4)); // 22
+        console.log(peach(10)); // 1534
+
+    </script>
+    <script>
+        var arr = ["甲","乙","丙","丁","甲","乙","丙","丁","甲","乙","丙","丁","甲","乙","丙","丁",]     
+              arr.reverse();
+              console.log("原数组 =>",arr);
+     
+    </script>
+</body>
+
+</html>

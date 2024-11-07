@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        function uniteUnique(arrays) {
+            var mergedArray = [];
+            arrays.forEach(function (subArray) {
+                mergedArray = mergedArray.concat(subArray);
+            });
+            var uniqueArray = [];
+            mergedArray.forEach(function (item) {
+                if (uniqueArray.indexOf(item) === -1) {
+                    uniqueArray.push(item);
+                }
+            });
+            // 对数组进行排序
+            uniqueArray.sort(function (a, b) {
+                return a - b;
+            });
+
+            return uniqueArray;
+        }
+
+        // 测试
+        console.log(uniteUnique([[1, 3, 2], [5, 2, 1, 4], [2, 1]])); // 应该返回[1, 2, 3, 4, 5]。
+        console.log(uniteUnique([[1, 2, 3], [5, 2, 1]])); // 应该返回[1, 2, 3, 5]。
+        console.log(uniteUnique([[1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]])); // 应该返回[1, 2, 3, 4, 5, 6, 7, 8]。
+
+
+
+    </script>
+</body>
+
+</html>

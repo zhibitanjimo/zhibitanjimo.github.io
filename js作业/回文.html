@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function palindrome(str) {
+            var cleanedStr = '';
+            for (var i = 0; i < str.length; i++) {
+                if (str[i] !== ' ') {
+                    cleanedStr += str[i].toLowerCase();
+                }
+            }        
+            var left = 0;
+            var right = cleanedStr.length - 1;
+            while (left < right) {
+                if (cleanedStr[left] !== cleanedStr[right]) {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+            return true;
+        }      
+        console.log(palindrome("not a palindrome")); 
+    </script>
+
+
+</body>
+
+</html>

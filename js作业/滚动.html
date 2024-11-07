@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="
+        https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+        "></script>
+    </head>
+    <body>
+        <script>
+            // localStorage.setItem("age", 17);
+            // console.log(localStorage.getItem("collectList"));
+            // console.log(typeof localStorage.getItem("collectList"));
+            // console.log(JSON.parse(localStorage.getItem("collectList")));
+
+            // localStorage.setItem("person", JSON.stringify({ name: "John", age: 30, job: "teacher" }));
+            // localStorage 大小大概是5Mb-10  域名相关 不会自动携带
+
+            // sessionStorage.setItem("age", 18);
+        </script>
+
+        <script>
+            // document.cookie =  "key=value; domain=xxx; path=xxx; expires=xxx;"
+
+            // 设置cookie
+            // document.cookie = "name=nick";
+
+            // 有作用范围 域名 路径 相关
+            // document.cookie = "age=17; path=/; expires=Thu, 18 Dec 2043 12:00:00 GMT";
+            // document.cookie = "job=teacher; path=/; expires=Thu, 18 Dec 2043 12:00:00 GMT";
+            // 过期时间
+
+            // 读取cookie
+            console.log(document.cookie);
+            Cookies.set('age', '17')
+            Cookies.set('name', 'value', { expires: 100 })
+            Cookies.set('name', 'value', { expires: 7, path: '123' })
+            Cookies.get()
+            // cookie在每次向服务器请求的时候都会自动携带过去
+            // 浏览器的cookie存储上限是4Kb
+
+            // https://www.npmjs.com/package/js-cookie
+        </script>
+    </body>
+</html>

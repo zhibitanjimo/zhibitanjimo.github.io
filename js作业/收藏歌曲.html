@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            display: flex;
+            width: 200px;
+            height: 30px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .first button {
+            width: 70px;
+            height: 30px;
+            background-color: #b3b7b8;
+            border-radius: 5px;
+        }
+        .first .left {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="collectList"></div>
+    <div id="songsList">
+        <div class="first">
+            <div class="left">海底</div>
+            <button data-id="4">未收藏</button>
+        </div>
+        <div class="first">
+            <div class="left">执迷不悟</div>
+            <button data-id="5">未收藏</button>
+        </div>
+        <div class="first">
+            <div class="left">他只是经过</div>
+            <button data-id="6">未收藏</button>
+        </div>
+        <div class="first">
+            <div class="left">经济舱 (Live)</div>
+            <button data-id="7">未收藏</button>
+        </div>
+        <div class="first">
+            <div class="left">是想你的声音啊</div>
+            <button data-id="8">未收藏</button>
+        </div>
+        <div class="first">
+            <div class="left">苦尽甘来</div>
+            <button data-id="9">未收藏</button>
+        </div>
+        <div class="first">
+            <div class="left">天外来物</div>
+            <button data-id="10">未收藏</button>
+        </div>
+    </div>
+
+    <script>
+        var songs = [
+            { id: 1, name: "会不会（吉他版）" },
+            { id: 2, name: "是但求其爱" },
+            { id: 3, name: "我很好（吉他版）" },
+            { id: 4, name: "海底" },
+            { id: 5, name: "执迷不悟" },
+            { id: 6, name: "他只是经过" },
+            { id: 7, name: "经济舱 (Live)" },
+            { id: 8, name: "是想你的声音啊" },
+            { id: 9, name: "苦尽甘来" },
+            { id: 10, name: "天外来物" },
+        ];
+        var collectList = JSON.parse(localStorage.getItem('collectList')) || [];
+
+        function updateButton(button) {
+            var songId = button.getAttribute('data-id');
+            var isCollected = collectList.includes(songId);
+            button.innerHTML = isCollected ? '取消收藏' : '收藏';
+            button.style.backgroundColor = isCollected ? 'red' : '#b3b7b8';
+            button.style.color = isCollected ? 'white' : 'black';
+        }
+
+        function toggleCollect(songId) {
+            var index = collectList.indexOf(songId);
+            if (index > -1) {
+                collectList.splice(index, 1);
+                updateButton(document.querySelector('button[data-id="' + songId + '"]'));
+            } else {
+                collectList.push(songId);
+                updateButton(document.querySelector('button[data-id="' + songId + '"]'));
+            }
+            localStorage.setItem('collectList', JSON.stringify(collectList));
+        }
+
+        document.querySelectorAll('button').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                toggleCollect(btn.getAttribute('data-id'));
+            });
+            updateButton(btn);
+        });
+
+        function displayCollectList() {
+            var collectListElement = document.getElementById('collectList');
+            collectListElement.innerHTML = '';
+            collectList.forEach(function (id) {
+                var song = songs.find(song => song.id === id);              
+                var div = document.createElement('div');
+                div.className = 'first';
+                div.innerHTML = `<div class="left">${song.name}</div>`;
+                collectListElement.appendChild(div);
+            });
+        }
+
+        displayCollectList();
+    </script>
+</body>
+
+</html> 

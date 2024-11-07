@@ -1,0 +1,42 @@
+.box {
+    width: 560px;
+    height: 560px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-bottom:none ;
+    background-color: #a3d250;
+}
+
+.col {
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin-right: 4.6px;
+    margin-top: 5px;
+    margin: 0;
+}
+.row{
+    width: 100%;
+    height: 35px;
+}
+
+
+.block {
+    background: url("images/block.gif") no-repeat 0 0/cover;
+
+}
+
+.tree {
+    background: url("images/wall.png") no-repeat 0 0/cover;
+
+}
+
+.ball {
+    background: url("images/ball.png") no-repeat 0 0/cover;
+}
+.smallbox {
+    background: url("images/box.png") no-repeat 0 0/cover;
+}
+.renwu{
+    background: url("images/down.png") no-repeat 0 0/cover;
+}

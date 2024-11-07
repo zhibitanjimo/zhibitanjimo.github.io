@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        var title = ['名称', '价格', '颜色', '重量', '减少', '数量', '添加', '总价', '操作'];
+        var product = [
+            ['小米手机', 1500, '黑色', '0.5kg', 1500],
+            ['华为手机', 1698, '蓝色', '0.45kg', 1698],
+            ['iphoneX', 7899, '红色', '0.6kg', 7899]
+        ];
+
+        var car = '<table>';
+        car += '<tr>';
+        car += '<td>' + '<input type="checkbox">' + '</td>';
+        for (var i = 0; i < title.length; i++) {
+            car += '<td>' + title[i] + '</td>';
+        }
+        car += '</tr>';
+        product.forEach(function (item, index) {
+            car += '<tr>';
+            car += '<td>' + '<input type="checkbox">' + '</td>';
+            car += '<td>' + item[0] + '</td>';
+            car += '<td>' + item[1] + '</td>';
+            car += '<td>' + item[2] + '</td>';
+            car += '<td>' + item[3] + '</td>';
+            car += '<td class="decrease">-</td>'; // 注意：使用class，而非id
+            car += '<td><input class="quantity" type="number" value="1"></td>'; // 添加type="number"和class
+            car += '<td class="increase">+</td>'; // 注意：使用class，而非id
+            car += '<td class="total">' + item[1] + '</td>';
+            car += '<td>删除</td>';
+            car += '</tr>';
+        });
+        car += '</table>';
+
+        document.body.innerHTML = car; // 使用document.body.innerHTML = car替代document.write(car)
+
+        // 事件处理
+        document.querySelectorAll('.increase').forEach(button => {
+            button.addEventListener('click', function () {
+                const row = this.closest('tr');
+                const quantity = row.querySelector('.quantity');
+                const total = row.querySelector('.total');
+
+                quantity.value = parseInt(quantity.value) + 1;
+                total.textContent = item[1] * quantity.value;
+            });
+        });
+
+        document.querySelectorAll('.decrease').forEach(button => {
+            button.addEventListener('click', function () {
+                const row = this.closest('tr');
+                const quantity = row.querySelector('.quantity');
+                const total = row.querySelector('.total');
+
+                if (parseInt(quantity.value) > 1) {
+                    quantity.value = parseInt(quantity.value) - 1;
+                    total.textContent = item[1] * quantity.value;
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    var originalArray = [1, [2, 3], {a: 4},[1,2,3,4]];
+    originalArray.push(44,55,66)
+        var copiedArray = JSON.parse(JSON.stringify(originalArray))           
+        console.log(copiedArray);
+         console.log(originalArray===copiedArray);
+             
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <title>Document</title>
+    <script src="./jq/jQuery.min.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        li p {
+            width: 200px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: no-wrap;
+        }
+
+        .poster {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 服务器地址:https://apis.netstart.cn/maoyan/search/movies?keyword=喜洋洋&ci=1 -->
+    <div class="box">
+        <div class="search">
+            <input class="inp" type="text" placeholder="请输入要搜索的电影" />
+        </div>
+        <div class="search-result"></div>
+    </div>
+</body>
+<script>
+    // 1.获取元素
+    var $inp = $(".inp");
+    console.log($inp);
+
+    var $result = $(".search-result");
+
+    /*
+     var inp = document.querySelector('.inp')
+    inp.onkeydown = function(event){
+        console.log('event',event);
+        if(event.keyCode == 13 && inp.value !== ''){
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("get", "https://apis.netstart.cn/maoyan/search/movies?keyword=" + $inp.val() + "&ci=1");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // console.log(xhr.responseText);
+
+            var list = JSON.parse(xhr.responseText);
+
+            console.log(list);
+
+            var ul = document.createElement("ul");
+
+            list.forEach((item) => {
+                var li = document.createElement("li");
+
+                var img = document.createElement("img");
+                img.src = item.poster;
+                img.classList.add("poster");
+
+                var p = document.createElement("p");
+                p.innerText = item.name;
+
+                li.appendChild(img);
+                li.appendChild(p);
+
+                ul.appendChild(li);
+            });
+            console.log(ul);
+
+            $result.html(ul);
+        }
+    };
+
+    xhr.send();
+        }
+    }
+   */
+
+    // 2.事件绑定
+    $inp.keydown(function (event) {
+        // console.log('绑定成功',event);
+        if (event.keyCode == 13 && $inp.val() !== "") {
+            console.log("发起请求");
+
+            /*
+             var xhr = new XMLHttpRequest();
+
+            xhr.open("get", "https://apis.netstart.cn/maoyan/search/movies?keyword=" + $inp.val() + "&ci=1");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // console.log(xhr.responseText);
+
+                    var list = JSON.parse(xhr.responseText);
+
+                    console.log(list);
+
+                    var $ul = $("<ul>");
+
+                    list.forEach((item) => {
+                        var $li = $(`
+                    <li>
+                        <img class='poster' src="${item.poster}" alt="">
+                        <p>${item.name}</p>
+                    </li>
+                `);
+
+                        $ul.append($li);
+                    });
+
+                    $result.html($ul);
+                }
+            };
+
+            xhr.send();
+
+            
+            */
+
+            $.ajax({
+                url: "https://apis.netstart.cn/maoyan/search/movies?keyword=" + $inp.val() + "&ci=1",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    var $ul = $("<ul>");
+
+                    data.forEach((item) => {
+                        var $li = $(`
+                        <li>
+                            <img class='poster' src="${item.poster}" alt="">
+                            <p>${item.name}</p>
+                        </li>
+                    `);
+
+                        $ul.append($li);
+                    });
+
+                    $result.html($ul);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log("请求失败: " + textStatus);
+                },
+            });
+        }
+    });
+</script>
+
+</html>
