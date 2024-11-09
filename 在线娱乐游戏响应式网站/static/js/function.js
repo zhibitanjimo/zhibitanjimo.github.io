@@ -19,8 +19,8 @@
 	/* Jackpot Init Counter */
 	var $counter = $('#counter-number');
 	if ($counter.length) {
-		var cstart = parseFloat($counter.attr('data-start'));
-		var cend = parseFloat($counter.attr('data-end'));
+		// var cstart = parseFloat($counter.attr('data-start'));
+		// var cend = parseFloat($counter.attr('data-end'));
 		var cdecimals = parseInt($counter.attr('data-decimals'));
 		var cduration = parseInt($counter.attr('data-duration'));
 		const options = {

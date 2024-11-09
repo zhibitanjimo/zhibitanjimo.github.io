@@ -1,66 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Personal Portfolio</title>
     <style>
         body {
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color:greenyellow
         }
 
-        header {
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100vh;
             background-color: #333;
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar div.one {
+            cursor: pointer;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #555;
+            color: #fff;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+        .sidebar div.one:hover, .sidebar div.active {
+            background-color: #777;
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        nav a {
-            text-decoration: none;
+        .box {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            transform: scale(0);
+            opacity: 0;
+            border: 1px solid #ddd; /* Add border to the box */
+            border-radius: 4px; /* Add border radius for a nicer look */
+            overflow: hidden; /* Ensure the content does not overflow */
+            
+        }
+
+        .box img {
+            width: 100%;
+            height: 92%;
+            object-fit: contain;
+            background-position: center;
+        }
+
+        .box .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
             color: #333;
-            padding: 5px 10px;
-            background-color: #ddd;
         }
 
-        nav a:hover {
-            background-color: #ccc;
+        .box a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: transparent;
+            z-index: 2;
         }
+
+        .box:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Section specific box layouts */
+        .section1 .box {
+            width: calc(50% - 20px);
+        }
+        .section2 .box {
+            width: calc(33.333% - 20px);
+        }
+        .section3 .box {
+            width: calc(33.333% - 20px);
+        }
+        .section4 .box {
+            width: calc(50% - 20px);
+        }
+        .section5 .box {
+            width: calc(50% - 20px); /* 调整宽度以适应两个盒子 */
+        }
+        .box1 { background-image: url('../个人作品集展示网页/img/html.png'); height: 481px;}
+        .box2 { background-image: url('../个人作品集展示网页/img/html+css.png'); }
+        /* ... other box styles ... */
+        .box3 { background-image: url('../个人作品集展示网页/img/snipaste20241108_143411.png');height: 481px }
+        .box4 { background-image: url('../个人作品集展示网页/img/柒品商城.png'); }
+        .box5 { background-image: url('../个人作品集展示网页/img/倒计时.png'); height: 314px; }
+        .box6 { background-image: url('../个人作品集展示网页/img/拼图.png'); }
+        .box7 { background-image: url('../个人作品集展示网页/img/数字炸弹.png'); }
+        .box8 { background-image: url('../个人作品集展示网页/img/放大镜.png'); height: 314px; }
+        .box9 { background-image: url('../个人作品集展示网页/img/轮播图.png'); }
+        .box10{ background-image: url('../个人作品集展示网页/img/选项卡.png'); }
+        .box11{ background-image: url('../个人作品集展示网页/img/手风琴.png');height: 321px; }
+        .box12 { background-image: url('../个人作品集展示网页/img/彩色圆环.png'); }
+        .box13{ background-image: url('../个人作品集展示网页/img/滚动png.png'); }
+        .box14 { background-image: url('../个人作品集展示网页/img/响应式.png');height: 491px; } /* Replace with your image path */
+        .box15 { background-image: url('../个人作品集展示网页/img/'); } 
+        .box16 { background-image: url('../个人作品集展示网页/img/轮播相册.png');height: 491px; } /* Replace with your image path */
+        .box17 { background-image: url('../个人作品集展示网页/img/魔方.png'); } 
+        /* Replace with your image path */
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>欢迎来到我的项目展示</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="./js作业/收藏歌曲.html">收藏歌曲</a></li>
-            <li><a href="./js作业/选项卡.html">选项卡</a></li>
-            <li><a href="./js作业/商品管理系统.html">商品管理系统</a></li>
-            <li><a href="./js作业/自动无缝.html">自动无缝</a></li>
-            <li><a href="./3d轮播相册/3d-carousel/index.html">火影</a></li>
-            <li><a href="./在线娱乐游戏响应式网站/index.html">响应式布局</a></li>        
-        </ul>
-    </nav>
-    <script src="scripts.js"></script>
-
-
+    <div class="sidebar">
+        <div class="one active" onclick="toggleVisibility(1)">HTML+CSS</div> 
+        <div class="one" onclick="toggleVisibility(2)">JavaScript</div>
+        <div class="one" onclick="toggleVisibility(3)">jQuery</div>
+        <div class="one" onclick="toggleVisibility(4)">Bootstrap</div>
+        <div class="one" onclick="toggleVisibility(5)">html5+css3</div> 
+    </div>
+    <div class="content">
+        <!-- Boxes for HTML+CSS -->
+        <div class="box box1">
+              <a href="/上课代码/考核作业/index.html" target="_blank"></a>
+              <div class="description" style="text-align: center;">HTML+CSS页面</div>
+        </div>
+        <div class="box box2">
+            <a href="/酒馆清吧网站模板/index.html" target="_blank"> alt="HTML Project"></a>
+            <div class="description" style="text-align: center;" >HTML+CSS页面</div>
+        </div>
+        <div class="box box3">
+            <a href="/上课代码/考核页面/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">HTML+CSS页面</div>
+        </div>
+        <div class="box box4">
+            <a href="/上课代码/柒品商城项目/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">HTML+CSS页面</div>
+        </div>
+        <div class="box box5">
+            <a href="/倒计时时钟/countdown-clock/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">新年倒计时</div>
+        </div>
+        <div class="box box6">
+            <a href="/拼图/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">拼图游戏</div>
+        </div>
+        <div class="box box7">
+            <a href="/上课代码/js作业/数字炸弹.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">数字炸弹游戏</div>
+        </div>
+        <div class="box box8">
+            <a href="/上课代码/js作业/放大.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">简易放大镜</div>
+        </div>
+        <div class="box box9">
+            <a href="/上课代码/js作业/自动无缝.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">自动无缝轮播图</div>
+        </div>
+        <div class="box box10">
+            <a href="/上课代码/js作业/选项卡.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">选项卡</div>
+        </div>
+        <div class="box box11">
+            <a href="/上课代码/js作业/手风琴2.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">手风琴</div>
+        </div>
+        <div class="box box12">
+            <a href="/彩色泡泡圆环/005/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">彩色圆环</div>
+        </div>
+        <div class="box box13">
+            <a href="/上课代码/js作业/滚动条.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">页面滚动</div>
+        </div>
+        <div class="box box14">
+            <a href="/在线娱乐游戏响应式网站/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">在线游戏娱乐网站</div>
+        </div>
+        <div class="box box15">
+            <a href="http://www.baidu.com" target="_blank"></a>
+            <div class="description" style="text-align: center;">3d轮播相册</div>
+        </div>
+        <div class="box box16">
+            <a href="/3d轮播相册/3d-carousel/index.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">3d轮播相册</div>
+        </div>
+        <div class="box box17">
+            <a href="/旋转魔方/旋转魔方.html" target="_blank"></a>
+            <div class="description" style="text-align: center;">魔方</div>
+        </div>
+        <!-- Add more boxes with similar structure -->
+    </div>
+    <script>
+        function toggleVisibility(section) {
+            document.querySelectorAll('.one').forEach(box => box.classList.remove('active'));
+            document.querySelectorAll('.box').forEach(box => {
+                box.classList.add('hidden');
+                box.style.transform = 'scale(0)';
+                box.style.opacity = '0';
+            });
+            var selectedBoxes = '';
+            if (section === 1) {
+                selectedBoxes = '.box1, .box2, .box3, .box4';
+            } else if (section === 2) {
+                selectedBoxes = '.box5, .box6, .box7, .box8, .box9, .box10';
+            } else if (section === 3) {
+                selectedBoxes = '.box11, .box12, .box13';
+            } else if (section === 4) {
+                selectedBoxes = '.box14';
+            }
+            else if (section === 5) {
+                selectedBoxes = '.box16, .box17';}
+            else if (section === 6) {
+                selectedBoxes = '.box16, .box17'; // 新增的html5+css3部分
+            }
+            document.querySelectorAll(selectedBoxes).forEach(box => {
+                box.classList.remove('hidden');
+                box.style.transform = 'scale(1)';
+                box.style.opacity = '1';
+            });
+            console.log(document.querySelector('.one:nth-child(' + section + ')') );
+            
+             document.querySelector('.one:nth-child(' + section + ')') .classList.add('active');
+            document.querySelector('.content').className = 'content'; // Remove previous classes
+            if (section === 1) {
+                document.querySelector('.content').classList.add('section1');
+            } else if (section === 2) {
+                document.querySelector('.content').classList.add('section2');
+            } else if (section === 3) {
+                document.querySelector('.content').classList.add('section3');
+            } else if (section === 4) {
+                document.querySelector('.content').classList.add('section4');
+            }
+            else if (section === 5) {
+                document.querySelector('.content').classList.add('section5');
+            } else if (section === 6) {
+                document.querySelector('.content').classList.add('section6'); // 新增的html5+css3部分
+            }
+        }
+            
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleVisibility(1);
+        });
+      
+    </script>
 </body>
-
 </html>
