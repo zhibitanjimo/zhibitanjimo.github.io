@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player with Lyrics</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        button {
+            display: block;
+            width: 100px;
+            margin: 15px auto;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .wordList li.active {
+            color: red; /* Highlight the active line */
+        }
+    </style>
+</head>
+<body>
+    <audio src="" controls></audio>
+    <div class="container">
+        <ul class="wordList">
+        </ul>
+    </div>
+    <button class="prev">上一首</button>
+    <button class="next">下一首</button>
+    <script>
+        const doms = {
+            audio: document.querySelector("audio"),
+            ul: document.querySelector("ul"),
+            container: document.querySelector(".container"),
+            prev: document.querySelector('.prev'),
+            next: document.querySelector('.next')
+        };
+
+        const songsWithLyrics = [
+            {
+                src: "https://music.163.com/song/media/outer/url?id=1975753397.mp3",
+                lrc: `[00:00.00] 作词 : 房祖名/小寒/刘思达LOFTHESTAR
+[00:00.32] 作曲 : 龚芝怡
+[00:00.64] 制作人 : 考拉/Ocd/叶增辉
+[00:00.96] 编曲 : 景慈
+[00:01.29]
+[00:01.90]我不在乎什么天长地久
+[00:04.42]我只在乎你想不想要拥有
+[00:08.09]一颗真心和温暖的手
+[00:11.38]在身后陪你微笑或泪流
+[00:14.59]我不在乎你下次回来待多久
+[00:18.39]我只在乎这心动前所未有
+[00:22.03]我不会走 cuz I love you so
+[00:25.55]想给你最好的我就算只是朋友
+[00:33.50]还想和你做朋友
+[00:36.16]想念 your big brown eyes
+[00:38.11]可爱的 lips i wanna kiss
+[00:41.12]i miss 想一直牵着你的手
+[00:44.04]但我还年轻心不定又能怎么办
+[00:47.67]boy 有什么话开不了口
+[00:51.68]no worries 我只是用脑想过头
+[00:54.63]拥有了又想自由自由后又想拥有
+[00:58.17]等待着 空逛着 有话别保留
+[01:01.94]他们说刮风的时候
+[01:05.49]你总选择要一个人颤抖
+[01:08.94]guess youll never know
+[01:10.65]cuz ill never show
+[01:12.41]为了谁你不自由
+[01:15.65]我不在乎什么天长地久
+[01:18.37]我只在乎你想不想要拥有
+[01:21.92]一颗真心和温暖的手
+[01:25.28]在身后陪你微笑或泪流
+[01:28.72]我不在乎你下次回来待多久
+[01:32.48]我只在乎这心动前所未有
+[01:36.02]我不会走 cuz i love you so
+[01:39.63]想给你最好的我就算只是朋友
+[01:47.62]信不过别人把你追走
+[01:50.71]也信不过自己暂时把你拥有
+[01:55.00]你低头喝着酒别只顾喝着酒
+[01:58.17]做朋友是保护你最坏也是最好的借口
+[02:01.73]我明白要你爱是荒谬的要求
+[02:05.37]我明白有些默契我必须要遵守
+[02:08.79]只是你眼眸走漏了一种
+[02:12.15]baby baby 想爱不能爱的哀愁
+[02:17.09]hey 好久不见还记得你喜欢听
+[02:20.34]不如不见记得以前和你分享我的担心
+[02:23.86]烦恼还有我的骄傲
+[02:25.74]但现在我们之间却变得越来越有礼貌
+[02:29.86]你身边是否会有朋友知道
+[02:32.97]流过的泪说过的话仍在我心中
+[02:36.49]虽然已经失去你
+[02:37.69]以后如果在街上碰到你和你心爱的那个谁
+[02:41.90]不后退我会微笑带礼貌地欣然面对
+[02:47.31]i wish you luck, wish you health, wish you love
+[02:50.16]with a smile and a hug
+[02:52.76]i wish you luck, wish you health, wish you love
+[02:55.47]with a smile and his hug
+[02:58.29]我不在乎你下次回来待多久
+[03:00.63]我只在乎这心动前所未有
+[03:04.31]Cuz I Love You So
+[03:06.69]I Love You So
+[03:07.90]想给你 最好的我
+[03:12.02]就算是朋友
+[03:13.23]我不在乎什么天长地久 我只在乎你想不想要拥有
+[03:18.61]一颗真心和温暖的手
+[03:23.54]在身边 陪你微笑 或泪流
+[03:25.74]我不在乎你下次回来待多久
+[03:28.93]我只在乎这心动前所未有
+[03:34.15]我不会走 Cuz I Love You So
+[03:36.33]想给你 最好的我 就算只是朋友
+[03:53.15] 原唱 : 房祖名/龚芝怡`
+            }, 
+           { src: "https://music.163.com/song/media/outer/url?id=1803936748.mp3",
+            lrc : `[00:00.000] 作词 : PIggy
+[00:01.000] 作曲 : PIggy
+[00:10.924]你看那月儿弯弯有几分似你
+[00:13.970]耀眼的月光 快照进我心
+[00:16.753]你说这是最美好的风景
+[00:22.265]但静悄悄距离却越靠越近
+[00:25.257]我们都发觉但却不言语
+[00:29.746]The song is for you
+[00:31.168]快带上随身听
+[00:33.366]想要每天清晨唱首love song 给你听
+[00:39.456]陪你数天上一闪亮晶晶
+[00:44.279]爱河有漫漫长路和温柔动人的你
+[00:50.512]我们就像是命中注定
+[00:55.611]让我做你的随身听
+[00:58.191]就算除了你没人听
+[01:02.761]穿过大海和森林
+[01:04.983]内存里装满回忆
+[01:07.137]你藏在满天星光里
+[01:09.584]承认我也为你着迷
+[01:13.191]每朵云都下落不明
+[01:15.783]月亮也不见踪迹
+[01:19.071]你喜欢听周杰伦的旋律
+[01:21.641]余佳运陶喆的r&b
+[01:24.737]我也能把情歌唱的动听
+[01:29.820]多少次坠入谷底又因你升起
+[01:32.961]为何你能让rappers变走心
+[01:37.369]我也想变很深情
+[01:38.849]可唱不好转音
+[01:41.297]I can sing like justin bieber 我有在学钢琴
+[01:46.661]为何要颤抖when you right with me
+[01:52.188]为见你一面 我环游遍了整个星系
+[01:58.218]千千万万遍哼的melody
+[02:03.534]让我做你的随身听
+[02:05.872]就算除了你没人听
+[02:10.286]穿过大海和森林
+[02:12.481]内存里装满回忆
+[02:14.744]你藏在满天星光里
+[02:17.046]承认我也为你着迷
+[02:20.565]每朵云都下落不明
+[02:23.365]月亮也不见踪迹
+[02:26.592]目光所及是你
+[02:28.088]诗和远方是你
+[02:28.940]我所有的日记
+[02:30.390]都写着我只喜欢你
+[02:31.862]夜色匆忙又何妨
+[02:33.425]朝朝暮暮是你
+[02:34.588]邂逅你是场宿命
+[02:36.070]回忆化成诗句
+[02:37.502]是对我重要的
+[02:38.613]让音符敲进心里
+[02:40.525]你能够梦到的
+[02:41.518]都跟我有着关系
+[02:43.134]要目不斜视
+[02:44.485]永远如此的望着你
+[02:47.414]得到你
+[02:49.420]想要每天清晨唱首love song 给你听
+[02:55.042]陪你数天上一闪亮晶晶
+[02:59.862]爱河有漫漫长路和温柔动人的你
+[03:06.275]我们就像是命中注定
+[03:11.382]让我做你的随身听
+[03:13.831]就算除了你没人听
+[03:18.551]穿过大海和森林
+[03:20.712]内存里装满回忆
+[03:22.909]你藏在满天星光里
+[03:25.255]承认我也为你着迷
+[03:28.855]每朵云都下落不明
+[03:31.919]月亮也不见踪迹`;
+        }
+        ];
+
+        let currentSongIndex = 0;
+        let lyricsArray = [];
+
+        function parseTime(lrcTime) {
+            let lrcTimeArr = lrcTime.split(":");
+            return +lrcTimeArr[0] * 60 + +lrcTimeArr[1];
+        }
+
+        function updateLyrics(index) {
+            const songLyrics = songsWithLyrics[index].lrc;
+            let lrcArr = songLyrics.split('\n');
+            let result = [];
+            
+            for (let i = 0; i < lrcArr.length; i++) {
+                var lrcData = lrcArr[i].split(']');
+                var lrcTime = lrcData[0].substring(1);
+                var obj = {
+                    time: parseTime(lrcTime),
+                    word: lrcData[1]
+                };
+                result.push(obj);
+            }
+            lyricsArray = result;
+            createElements();
+            setOffset();
+        }
+
+        function createElements() {
+            doms.ul.innerHTML = '';
+            lyricsArray.forEach((item, index) => {
+                let li = document.createElement("li");
+                li.innerText = item.word;
+                li.classList.add("lyric");
+                if (index === 0) {
+                    li.classList.add("active");
+                }
+                doms.ul.appendChild(li);
+            });
+        }
+
+        function setOffset() {
+            let index = getIndex();
+            let li = doms.ul.querySelectorAll(".lyric");
+            li.forEach((l, i) => {
+                if (i === index) {
+                    l.classList.add("active");
+                } else {
+                    l.classList.remove("active");
+                }
+            });
+        }
+
+        function getIndex() {
+            let Time = doms.audio.currentTime;
+            for (let i = 0; i < lyricsArray.length; i++) {
+                if (lyricsArray[i].time > Time) {
+                    return i - 1;
+                }
+            }
+            return lyricsArray.length - 1;
+        }
+
+        doms.audio.addEventListener("timeupdate", setOffset);
+
+        doms.prev.addEventListener('click', function() {
+            if (currentSongIndex > 0) {
+                currentSongIndex--;
+                loadSong(songsWithLyrics[currentSongIndex]);
+            }
+        });
+
+        doms.next.addEventListener('click', function() {
+            if (currentSongIndex < songsWithLyrics.length - 1) {
+                currentSongIndex++;
+                loadSong(songsWithLyrics[currentSongIndex]);
+            }
+        });
+
+        function loadSong(song) {
+            doms.audio.src = song.src;
+            doms.audio.play();
+            updateLyrics(currentSongIndex);
+        }
+
+        // Initialize the lyrics for the first song
+        loadSong(songsWithLyrics[currentSongIndex]);
+    </script>
+</body>
+</html>

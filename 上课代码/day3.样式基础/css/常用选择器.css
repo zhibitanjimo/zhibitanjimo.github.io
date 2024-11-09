@@ -1,0 +1,31 @@
+.box1{
+       border: 20px solid purple ;
+        background-color: aqua;
+        width: 200px;
+        height: 200px;
+      margin-left: 20px;
+      margin-top: 20px;
+      padding-top: 40px;
+      padding-left: 50px;
+      position: relative
+      
+}
+.box2{
+            width: 150px;
+            height: 200px;
+            background-color: blue;
+            border: 10px solid yellow;
+            border-radius: 20px;
+            
+}
+.box3{
+            width: 500px;
+            height: 500px;
+            background-color: brown;
+            margin-bottom: 20px;
+            display: flex;
+            justify-items: center;
+            justify-content: flex-end;
+            text-justify: inter-cluster;
+}
+

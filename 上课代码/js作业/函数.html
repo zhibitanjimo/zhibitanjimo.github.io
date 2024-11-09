@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var money = 2000;
+           function ATM() {
+            var keyword = prompt("请输入要执行的操作\n 1.存钱\n2.取钱\n3.查看余额\n4.退出系统")
+        keyword = Number(keyword);
+        switch (keyword) {
+            case 1:
+                savemoney();
+                  ATM();
+                break;
+             case 2:
+                      getMoney();
+                      ATM();
+                break;
+                case 3:
+                    alert("当前的余额为:"+money)
+                    ATM();
+                    break;
+                 case 4: alert("退出系统")
+                 ATM();
+                 break;                      
+        }
+           }
+           ATM();
+
+        //存钱的函数
+        function savemoney() {
+            var count = Number(prompt("请输入要存入的金额"));
+            money += count;
+            alert("存入" + count + "元，当前的金额为：" + money);
+        }
+        function getMoney() {
+                           var count = Number(prompt("请输入要取入的金额"));
+                           money-=count;
+                           alert("取入" + count + "元，当前的金额为：" + money)
+        }
+    </script>
+</body>
+
+</html>

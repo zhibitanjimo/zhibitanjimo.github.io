@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            console.log("start");
+            setTimeout(() => {
+                console.log(123);
+            }, 0);
+            console.log("end");
+
+            // setTimeout里面的代码是异步代码 等到所有的同步代码走完 才会走 即便时间是0
+        </script>
+    </body>
+</html>

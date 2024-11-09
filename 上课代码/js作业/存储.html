@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Images</title>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: grab;
+        }
+
+        .target {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin-top: 50px;
+            position: relative;
+            overflow: auto; /* 添加滚动条 */
+        }
+
+        .dropped-image {
+            width: 100px; /* 设置图片宽度 */
+            height: auto; /* 高度自适应 */
+            margin: 5px; /* 添加边距 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box" draggable="true">num:1</div>
+    <div class="target"></div>
+
+    <script>
+        var box = document.querySelector('.box');
+        var target = document.querySelector('.target');
+        // 开始拖动事件
+        box.addEventListener('dragstart', function(e) {
+            console.log('开始拖动');
+            e.dataTransfer.setData('text/plain', '拖放了一个图片');
+        });
+
+        // 目标元素
+        target.addEventListener('dragenter', function() {
+            console.log('进入到目标元素触发一次');
+        });
+
+        target.addEventListener('dragover', function(e) {
+            e.preventDefault(); // 允许放置
+        });
+
+        target.addEventListener('drop', function(e) {
+            e.preventDefault();
+            console.log('拖放到目标元素');
+            // 获取拖放的文件
+            var files = e.dataTransfer.files;
+            if (files.length > 0) {
+                var file = files[0];
+                var reader = new FileReader();
+                // 读取文件并显示
+                reader.onload = function(event) {
+                    var img = document.createElement('img');
+                    img.src = event.target.result; // 设置图片源
+                    img.classList.add('dropped-image'); // 添加样式类
+                    // 将图片添加到目标盒子
+                    target.appendChild(img);
+                };
+                reader.readAsDataURL(file); // 读取文件为数据URL
+            }
+        });
+    </script>
+</body>
+</html>

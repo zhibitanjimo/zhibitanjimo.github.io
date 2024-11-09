@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var target = new Date("2025-1-1 00:00:00");
+        setInterval(function () {
+            var today = new Date();
+            var ms = target - today;
+            // console.log(ms);
+            var s = Math.floor(ms / 1000);
+            // console.log(s);
+            var day = Math.floor(s / (24 * 3600));
+            // console.log(day);
+            s = Math.floor(s % (24 * 3600));
+            var hours = Math.floor(s / 3600);
+            // console.log(hours);
+            s = Math.floor(s % 3600);
+            var min = Math.floor(s / 60);
+            // console.log(min);
+            s = Math.floor(s % 60);
+            // console.log(s);
+            document.body.innerHTML = "<h3>距离2025年还有: " + day + "天" + hours + "小时" + min + "分钟" + s + "秒</h3>";
+        }, 1000)
+    </script>
+</body>
+
+</html>

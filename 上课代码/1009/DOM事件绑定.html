@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+       
+
+        <button class="btn" onclick="console.log(123)">btn</button>
+        <script>
+            console.log(document);
+            console.log(window.document);
+            console.log(document === window.document);
+
+            // 添加事件
+            var btn = document.querySelector(".btn");
+            btn.onclick = function () {
+                console.log("click1");
+            };
+            btn.onclick = function () {
+                console.log("click2");
+            };
+            // onclick的写法后面的会覆盖前面定义的时间处理函数
+
+            // event, function, useCapture(是否使用捕获模式)
+            // 不要使用 "on" 前缀。 例如，使用 "click" ,而不是使用 "onclick"。
+            btn.addEventListener("click", function () {
+                console.log(456);
+            });
+            btn.addEventListener("click", function () {
+                console.log(789);
+            });
+        </script>
+    </body>
+</html>

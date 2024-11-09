@@ -1,0 +1,292 @@
+.navbar-top{
+     width: 100%;
+     height: 75px;
+      background-color: aqua;
+}
+.navbar-top .container{
+         width: 1135px;
+         height: 100%;
+         margin: 0 auto;
+}
+.navbar-top .logo{
+    width: 128px;
+    height: 39px;
+    background-color: black;
+    float: left;
+       margin-top: 18px;
+}
+.navbar-top .logo img{
+    width: 100%;
+    height: 100%;
+}
+.navbar-top .middle{
+     width: 635px;
+     height: 48px;
+     background-color: aquamarine;
+     float: left;
+     margin-left: 130px;
+      padding-top: 20px
+}
+.navbar-top .location{
+      width: 80px;
+      height: 39px;
+      background-color: brown;
+      line-height: 39px;
+      text-align: center;
+      float: left;
+}
+.navbar-top .location img{
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+    .middle .ipt input{
+         width: 460px;
+         height: 45px;
+         float: left;
+
+    }
+    .middle .btn{
+        width: 85px;
+        height: 45px;
+        background-color: red;
+        float: left;
+        line-height:45px ;
+        text-align: center;
+    }
+    .right{
+        width:  170px;
+        height: 40px;
+        background-color: red;
+        float: right;
+         margin-right: 20px;
+         margin-top: 20px;
+    }
+    ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    /* 去除列表的标志 （列表的实心圆、数字标志） */
+    list-style: none;
+}
+.navbar-top .right li{
+    float: left;
+    margin-right: 15px;
+}
+.right ul{
+    overflow: hidden;
+}
+.navbar-top .right img{
+    margin-top: -20px;
+    width:30px;
+    height: 44px;
+    float: right;
+}
+.list{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+.list .container{
+    width: 600px;
+    height: 40px;
+    background-color: white;
+    margin: 0 auto;
+    margin-left: 80px;
+}
+.list .container li{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    margin-right: 35px;
+    font-size: 15px;
+}
+.bread{
+    width: 100%;
+    height: 70px;
+}
+.bread .container{
+    height: 45px;
+    width: 500px;
+    margin: 0 auto;
+    margin-left: 58px;
+}
+.bread li{
+    float: left;
+    margin-left: 20px;
+}
+ .inter{
+    width: 100%;
+    height: 565px;
+}
+
+.inter .container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 1px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.inter .container .title {
+    width: 100%;
+    height: 45px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    padding-left: 45px;
+    box-sizing: border-box;
+}
+
+.inter .neirong {
+    width: 100%;
+    height: 400px;
+    padding: 0 45px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 前进后退按钮 */
+.inter .neirong span {
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: #d8eff7;
+    border-radius: 15px;
+
+    position: absolute;
+    top: calc(50% - 25px);
+
+    font-size: 20px;
+
+    text-align: center;
+    line-height: 50px;
+}
+
+.inter .neirong span.qianjin {
+    left: -80px;
+}
+
+.inter .neirong span.houtui{
+    right: -80px;
+}
+
+/* 多列浮动布局 */
+.inter .neirong>div {
+    width: calc(33.3333% - 25px + 25px/3);
+    height: 100%;
+    float: left;
+    margin-right: 25px;
+}
+
+.inter .neirong .last {
+    margin-right: 0;
+}
+
+.inter .neirong .tupian {
+    width: 100%;
+}
+
+.inter .neirong .wenzi {
+    text-align: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.inter .neirong .wenzi .name,
+.inter .neirong .wenzi .time {
+    font-size: 18px;
+    margin: 7px 0;
+}
+
+.inter .neirong .wenzi .time {
+    color: #8cbecf;
+}
+
+
+/* 5. 页脚 */
+.foot
+ {
+    width: 100%;
+    height: 145px;
+    background-color: #414141;
+    margin-top: 50px;
+}
+
+.foot
+ .container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.foot
+ .container .xiangshang {
+    width: 100%;
+    height: 75px;
+}
+
+.foot
+ .container .xiangshang ul {
+    overflow: hidden;
+}
+
+.foot
+ .container .xiangshang ul li {
+    float: left;
+    margin-right: 55px;
+    font-size: 20px;
+    color: white;
+    line-height: 75px;
+}
+
+.foot
+ .container .xiangshang .deep li {
+    margin-right: 0;
+    margin-left: 55px;
+
+    position: relative;
+}
+
+.foot
+ .container .xiangshang .deep li span {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: -30px;
+    top: calc(50% - 12.5px);
+}
+.weib{
+    background: url("../images/weib.png") no-repeat 0 0/100%;
+}
+.weixin{
+    background: url("../images/weixin.png") no-repeat 0 0/100%;
+}
+
+.foot
+ .container.xiangxia{
+    height: 15px;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: -80px;
+}
+.foot
+ .container.xiangxia p{
+    margin-top: -40px;
+    text-align: center;
+}
+        .list .container ul{
+            overflow: hidden;
+        }
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.bread .container ul{
+    overflow: hidden;
+}

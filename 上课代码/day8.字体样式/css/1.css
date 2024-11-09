@@ -1,0 +1,16 @@
+.box{
+    width: 0;
+    height: 0;
+    border: 40px solid transparent;
+    border-width: 10px 10px;
+   border-top-color: aqua;
+   border-bottom:none;
+   margin-left: 60px;
+}
+   .box:hover{
+         border-bottom: 40px solid black;
+         border-width: 40px 20px;
+         border-top:none;
+   }span{
+    float: left;
+   }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+         <style>
+           
+        
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid;
+            border-top: none;
+        }
+        table caption{
+            border: 1px solid;
+            border-bottom: none;
+            font-weight: 600;
+        }
+        table tr{
+            border-bottom:1px solid
+        }
+        table th{
+           border-right: 1px solid;
+           font-weight: 400;
+        }
+         table td{
+            border-right: 1px solid;
+         }
+
+         </style>
+<body>
+      <div id="resume"></div>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+            var userName = "慢羊羊"
+            var sex = "男"
+            var age = "54岁"
+            var education = "博士后"
+            var graduationDate = "1988年"
+            var graduateInstitutions = "清华大学"
+            var workingTime = "1988年7月30日"
+            var responsibilities = "哈哈哈哈,工作职责就是工作者具体工作的内容所负的责任及达到岗位要求的标准，完成上级交付的任务。"
+
+            var str = "<table>";
+             str+='<caption>'+userName+'-'+'个人简历'+'<caption>'
+             str+='<tr><th>姓名:</th><td>'+userName+'</td><th>性别:</th><td>'+sex+'</td></tr>'
+             str+='<tr><th>年龄:</th><td>'+age+'</td><th>学历:</th><td>'+education+'</td></tr>'
+             str+='<tr><th>毕业时间:</th><td>'+graduationDate+'</td><th>毕业学校:</th><td>'+graduateInstitutions+'</td></tr>'
+              str+='<tr><th>工作时间:</th><td>'+workingTime+'</td><th>工作职责:</th><td>'+responsibilities+'</td></tr>'
+            // 代码实现
+            str += "</table>";
+
+            // 把表格内容填完之后，记得输出表格         
+            document.write(str);
+
+      </script>
+</body>
+
+</html>

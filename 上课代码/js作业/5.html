@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .board {
+            display: grid;
+            gap: 1px;
+            grid-template-columns: repeat(16, 20px);
+            grid-template-rows: repeat(16, 20px);
+        }
+
+        .tile {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-color: #fff;
+        }
+
+        .wall {
+            background-color: #000;
+        }
+
+        .box {
+            background-color: #f00;
+        }
+
+        .target {
+            background-color: #0f0;
+        }
+
+        .player {
+            background-color: #00f;
+        }
+
+        .obstacle {
+            background-color: #ff0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game-board" class="board"></div>
+    <!-- 先导入数据 -->
+         
+    <script src="../js/mapdata.js"></script>
+         
+    <script>
+        // 完整推箱子地图
+        // console.log(levels);
+
+        // var idx = 0;
+        var idx = +prompt('请输入关卡 1-100:')
+        level = levels[idx - 1]
+        // 1. 创建一个html字符串
+        var htmlStr = "<div class='box'>";
+        // htmlStr += "<h1>这是标题标签</h1>";
+
+        // 遍历三维数组, 创建 推箱子的行和列
+        for (var i = 0; i < level.length; i++) {
+            // 拿到子数组, (每一行)
+            // console.log(seatsArr[i]);
+
+            // 创建行标签
+            htmlStr += '<div class="row"><div></div>';
+
+            // 遍历子数组, 拿到子数组的每一项,  (每一列)
+            for (var j = 0; j < level[i].length; j++) {
+
+                // 判断数据, 根据数据创建指定数据的列
+                switch (level[i][j]) {
+                    case 0:
+                        // 创建地板
+                        htmlStr += '<div class="col"><div></div></div>'
+                        break;
+                    case 1:
+                        // 创建树
+                        htmlStr += '<div class="col"><div class="tree"></div></div>'
+                        break;
+                    case 2:
+                        // 创建球
+                        htmlStr += '<div class="col"><div class="ball"></div></div>'
+                        break;
+                    case 3:
+                        // 创建箱子
+                        htmlStr += '<div class="col"><div class="box1"></div></div>'
+                        break;
+                    case 4:
+                        // 创建人物
+                        htmlStr += '<div class="col"></div>'
+                }
+            }
+        }
+</body >
+</html >

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            function log(x, y) {
+                y = y || "World"; // 管道符有隐式类型转换(null 0 false '')
+                console.log(x, y);
+            }
+
+            log("Hello");
+            log("Hello", 123);
+            log("Hello", null);
+            log("Hello", 0);
+            log("Hello", false);
+        </script> -->
+
+        <!-- <script>
+            function log(x, y) {
+                if (y === undefined) {
+                    y = "World";
+                }
+                console.log(x, y);
+            }
+
+            log("Hello");
+            log("Hello", 123);
+            log("Hello", null);
+            log("Hello", 0);
+            log("Hello", false);
+        </script> -->
+
+        <!-- <script>
+            function log(x = "Hello", y = "World") {
+                console.log(x, y);
+            }
+
+            log("Hello");
+            log("Hello", 123);
+            log("Hello", null);
+            log("Hello", 0);
+            log("Hello", false);
+        </script> -->
+
+        <!-- 函数的参数默认值 和 解构的默认值 配合 -->
+        <script>
+            function foo({ x, y = 5 } = {}) {
+                console.log(x, y);
+            }
+            foo({});
+            foo();
+            // 函数需要一个对象作为参数
+            // 如果函数不带参数 相当于解构 { x, y = 5 } = undefined
+        </script>
+        <script>
+            // 写法一
+            function m1({ x = 0, y = 0 } = {}) {
+                return [x, y];
+            }
+
+            // 写法二
+            function m2({ x, y } = { x: 0, y: 0 }) {
+                return [x, y];
+            }
+
+            console.log(m1());
+            console.log(m1({}));
+            console.log(m1({ x: 1 }));
+            console.log("========");
+            console.log(m2());
+            console.log(m2({}));
+            console.log(m2({ x: 1 }));
+        </script>
+
+        <!-- <script>
+            console.log("========");
+            // Dot构造器  x, y, radius, color
+            
+
+            function Dot(x = 100, y = 100, radius = 10, color = "red") {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+            }
+            console.log(new Dot());
+            console.log(new Dot(50, 50, 20, "blue"));
+            console.log(new Dot(10, 10, 10));
+            console.log(new Dot("orange"));
+            // Dot {x: 'orange', y: 100, radius: 10, color: 'red'}
+
+            console.log(new Dot(0, 0, 0, "orange"));
+            console.log(new Dot(undefined, undefined, undefined, "orange"));
+            // 多个参数是有顺序的,前面的参数不能省略 必须写undefined
+        </script> -->
+
+        <script>
+            function Dot({ x = 100, y = 100, radius = 10, color = "red" } = {}) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+            }
+
+            console.log(new Dot({}));
+            console.log(new Dot({ radius: 5 }));
+            console.log(new Dot({ radius: 5, x: 200 }));
+            console.log(new Dot());
+            // 函数可以省略参数 取函数参数默认值{} 然后再解构赋值 取解构默认值
+
+            console.log(Dot.length); // 没有指定默认值的参数的个数
+        </script>
+    </body>
+</html>

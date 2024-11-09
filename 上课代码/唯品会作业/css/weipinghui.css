@@ -1,0 +1,248 @@
+.top-nav{
+      width: 100%;
+      height: 30px;
+      line-height: 27px;
+      background-color: #f5f5f5;
+      color: #777;
+}
+.head-inner{
+     width: 1000px;
+     height: 100%;
+     background-color: blue;
+     margin: 0 auto;
+}
+ .top-nav .guangzhou{
+    width: 85px;
+    height: 100%;
+    background-color: aquamarine;
+    position: relative;
+    float: left;
+ }
+ 
+ .top-nav .trainge{
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-color: #999 transparent transparent transparent;
+    border-style: solid dashed dotted dashed;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+ }
+ .top-nav .top-list{
+    width: 800px;
+    height: 100%;
+    background-color: black;
+    float:right
+ }
+ li{ 
+    list-style: none;
+    float: left;
+    margin-top: -15px;
+    padding: 0 5px 0 20px;
+    font-size: 12px
+ };
+  
+ .top-nav ul{   
+ overflow: hidden;
+  position: relative;
+ }
+ .top-nav .icos{
+        position: absolute;
+        top: 20px;
+        left: 794px;
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-color: #999 transparent transparent transparent;
+    border-style: solid dashed dotted dashed
+ }
+ .top-nav .my{
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-color: #999 transparent transparent transparent;
+    border-style: solid dashed dotted dashed;
+    position: absolute;
+    top: 22px;
+    left: 710px;
+    border-top-color:#999;
+    border-bottom: none;
+    
+ }
+ .top-nav .my:hover{
+            border-bottom: 4px solid pink ;
+            border-top: none;
+ }
+ .top-nav .kehu{
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-color: #999 transparent transparent transparent;
+    border-style: solid dashed dotted dashed;
+    position: absolute;
+ top: 22px;
+ left: 863px;
+ }
+ .top-nav .gengduo{
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-color: #999 transparent transparent transparent;
+    border-style: solid dashed dotted dashed;
+    position: absolute;
+    top: 22px;
+    left: 973px;
+ }
+ .top-nav .body{
+    position: absolute;
+    height: 284px;
+    top: 40px;
+    left: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 400px;
+    background-color: #fff;
+    display: none;
+ }
+ .top-nav .body-tab{
+    width: 470px;
+    height: 241px;
+ }
+ .top-nav .tab-head{
+    width: 100%;
+    height: 29px;
+ }
+ .top-nav .tab-body{
+    width: 100%;
+    height: 212px;
+ }
+.top-nav .guangzhou:hover .body {
+               display: block;            
+}
+.top-nav .user-tab{
+    border-bottom: #d6d6d6 1px dotted;
+    width: 175px;
+    padding-left: 5px;
+    height: 100px;
+    line-height: 32px;
+    display: none;
+}
+.top-nav .user-tab{
+    text-align:center;
+    letter-spacing: 4px;
+}
+.top-nav .user:hover .user-tab{
+    display: block;
+}
+.top-nav .mysold{
+    width: 94px;
+    height: 100px;
+    display: none;
+    position: absolute;
+    left: 655px;
+    top: 40px;
+}
+.top-nav li:hover .mysold{
+    display: block;
+}
+.top-nav .club{
+    width: 80px;
+    height: 50px;
+    background-color: brown;
+    display: none;
+    position: absolute;
+    left: 730px;
+    top: 40px;
+}
+.top-nav li:hover .club{
+    display: block;
+}
+.top-nav .kehu{
+    width: 80px;
+    height: 110px;
+    background-color:red;
+    position: absolute;
+    top: 40px;
+    left: 800px;
+    display: none;
+   }
+   .top-nav li:hover .kehu{
+         display: block;
+   }
+   .top-nav .tab{
+    width: 210px;
+    height: 120px;
+    background-color: yellow;
+    position: absolute;
+    top: 13px;
+    left: -35px;
+    display: none;
+   }
+   .top-nav li:hover .tab{
+    display: block;
+   }
+   .top-nav .phone{
+      width: 200px;
+      height: 250px;
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 750px;
+
+   }
+   .top-nav .phone img{
+      width: 200px;
+      height: auto;
+      display: block;
+   }
+   .top-nav li:hover .phone{
+      display: block;
+   }
+   .top-nav .qiandao{
+      width: 461px;
+      height: 553px;
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 450px;
+   }
+   .top-nav .qiandao img{
+      width: 200px;
+      height: auto;
+      display: block;
+   }
+   .top-nav li:hover .qiandao{
+      display: block;
+   }
+   
+   .top-nav .sprite {
+      background: url('../images/sprites-hash-06206acd.png') no-repeat -294px -142px;
+      width: 10px;
+      height: 14px;
+     position: absolute;
+     top: 15px;
+     left: 870px;
+   }
+   .top-nav .liwu{
+      position: absolute;
+      background: url('../images/sprites-hash-06206acd.png') no-repeat -188px -188px;
+	width: 15px;
+	height: 14px;
+   top: 15px;
+   left: 490px;
+   }
+   .top-nav .tab-title ul{
+       width: 430px;
+       height: 330px;
+       position:relative;
+     
+   }
+   .top-nav .tab-title ul img{
+       width: 430px;
+       height: auto;
+       display: block;
+       position: absolute;
+       left: -80px;
+       top: 0;
+   }

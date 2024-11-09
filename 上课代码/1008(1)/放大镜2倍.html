@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="xxx">
+            <div class="stage">
+                <img src="./banner1.jpg" alt="" />
+                <div class="mask"></div>
+            </div>
+            <div class="preview">
+                <img src="./banner1.jpg" alt="" />
+            </div>
+        </div>
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'Tab1')"><img src="./banner1.jpg" alt=""></button>
+        <button class="tablink" onclick="openTab(event, 'Tab2')"><img src="./banner2.jpg" alt=""></button>
+        <button class="tablink" onclick="openTab(event, 'Tab3')"><img src="./banner3.jpg" alt=""></button>
+        <button class="tablink" onclick="openTab(event, 'Tab4')"><img src="./banner4.jpg" alt=""></button>
+        <button class="tablink" onclick="openTab(event, 'Tab5')"><img src="./banner5.jpg" alt=""></button>
+    </div>
+      
+    <select name="" id="">
+        <option value="">请选择</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+     </select>
+    
+        <style>
+            .xxx {
+                display: flex;
+            }
+            .stage {
+                width: 400px;
+                height: 400px;
+                position: relative;
+            }
+            .stage:hover {
+                cursor: zoom-in;
+            }
+            .stage img {
+                width: 100%;
+            }
+            .stage .mask {
+                width: 200px;
+                height: 200px;
+                background-image: url("./mask-bg.png");
+                /* background-color: rgba(255, 0, 0, 0.342); */
+                position: absolute;
+                top: 200px;
+                left: 200px;
+            }
+
+            .preview {
+                width: 400px;
+                height: 400px;
+                box-shadow: 0 0 5px 0 rgb(153, 153, 153);
+                overflow: hidden;
+                margin-left: 20px;
+                position: relative;
+            }
+            .preview img {
+                width: 200%;
+                position: absolute;
+                top: -400px;
+                left: -400px;
+            }
+            .tabs button {
+            background-color: blue;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tabs button:hover {
+            background-color: #ddd;
+        }
+        .tabs button.active {
+            background-color: #ccc;
+        }
+        .tabs button img{
+            width: 75px;
+            height: 72px;
+        }
+        </style>
+
+        <script>
+            var stage = document.querySelector(".stage");
+            var mask = document.querySelector(".mask");
+            var preview = document.querySelector(".preview img");
+
+            // onmousemove  over out   move移动
+            stage.onmousemove = function (event) {
+                // console.log(event.offsetX);
+                // console.log(event.clientX - stage.offsetLeft);
+                var x = event.clientX - stage.offsetLeft;
+                var y = event.clientY - stage.offsetTop;
+                console.log(x, y);
+                // 鼠标的位置
+
+                // mask左上角
+                maskX = x - 100;
+                maskY = y - 100;
+                if (maskX < 0) {
+                    maskX = 0;
+                }
+                if (maskX > stage.offsetWidth - mask.offsetWidth) {
+                    maskX = stage.offsetWidth - mask.offsetWidth;
+                }
+                if (maskY < 0) {
+                    maskY = 0;
+                }
+                if (maskY > stage.offsetHeight - mask.offsetHeight) {
+                    maskY = stage.offsetHeight - mask.offsetHeight;
+                }
+
+                mask.style.left = maskX + "px";
+                mask.style.top = maskY + "px";
+                // mask左上角的位置
+
+                // 00 00
+                // 200,200 =>-400,-400
+                // 200,0=> -400,0
+                // preview
+                preview.style.left = -maskX * 2 + "px";
+                preview.style.top = -maskY * 2 + "px";
+            };          
+            function openTab(evt, tabName) {
+            var tablinks = document.getElementsByClassName("tablink");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            evt.currentTarget.className += " active";
+
+            if (tabName === 'Tab1') {
+                document.querySelector(".stage img").src = "./banner1.jpg";
+                document.querySelector(".preview img").src = "./banner1.jpg";
+            } else if (tabName === 'Tab2') {
+                document.querySelector(".stage img").src = "./banner2.jpg";
+                document.querySelector(".preview img").src = "./banner2.jpg";
+            }
+             else if (tabName === 'Tab3') {
+                document.querySelector(".stage img").src = "./banner3.jpg";
+                document.querySelector(".preview img").src = "./banner3.jpg";
+            } else if (tabName === 'Tab4') {
+                document.querySelector(".stage img").src = "./banner4.jpg";
+                document.querySelector(".preview img").src = "./banner4.jpg";
+            } else if (tabName === 'Tab5') {
+                document.querySelector(".stage img").src = "./banner5.jpg";
+                document.querySelector(".preview img").src = "./banner5.jpg";
+            }
+        }
+        </script>
+    </body>
+</html>

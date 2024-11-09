@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="big">
+            big
+            <div class="small">
+                small
+                <div class="box">box</div>
+            </div>
+        </div>
+        <style>
+            .big {
+                width: 200px;
+                height: 200px;
+                background-color: #ff0000;
+            }
+            .small {
+                width: 100px;
+                height: 100px;
+                background-color: #00ff00;
+            }
+            .box {
+                width: 50px;
+                height: 50px;
+                background-color: #0000ff;
+            }
+        </style>
+        <script>
+            var big = document.querySelector(".big");
+            var small = document.querySelector(".small");
+            var box = document.querySelector(".box");
+
+            big.onclick = function (e) {
+                // this是事件绑定的元素  e.target事件触发的元素
+                console.log("big", this, e.target);
+            };
+            small.onclick = function (e) {
+                console.log("small");
+            };
+            box.onclick = function (e) {
+                console.log("box");
+                e.stopPropagation(); // 阻止冒泡
+            };
+            // 事件冒泡 子元素父元素都有事件  点击子元素 先触发资源的 再依次向外冒泡
+
+            // 现代浏览器 默认冒泡 和 IE浏览器默认是捕获
+        </script>
+        <!-- <script>
+            var big = document.querySelector(".big");
+            var small = document.querySelector(".small");
+            var box = document.querySelector(".box");
+
+            big.addEventListener(
+                "click",
+                function (e) {
+                    console.log("big", this, e.target);
+                },
+                true
+            );
+            // small在捕获阶段触发
+            small.addEventListener(
+                "click",
+                function (e) {
+                    console.log("small");
+                },
+                true
+            );
+            box.addEventListener("click", function (e) {
+                console.log("box");
+            });
+        </script> -->
+    </body>
+</html>

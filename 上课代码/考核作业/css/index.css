@@ -1,0 +1,434 @@
+.box {
+    width: 100%;
+    height: 4779px;
+
+}
+
+.nav-top {
+    width: 100%;
+    height: 80px;
+
+}
+
+.nav-top .container {
+    width: 1164px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box .left-nav {
+    width: 162px;
+    height: 50px;
+
+}
+
+.box .right-nav {
+    width: 677px;
+    height: 51px;
+    position: relative;
+}
+
+.box .right-nav ul {
+    display: flex;
+}
+
+.box .right-nav ul li {
+    list-style: none;
+    margin-right: 30px;
+    font-size: 12px;
+}
+
+.box .right-nav img {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 580px;
+    top: 10px;
+}
+
+.box .middle-box {
+    width: 100%;
+    height: 623px;
+
+}
+
+.box .middle-box .container {
+    width: 820px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.box .banner {
+    width: 100%;
+    height: 280px;
+}
+
+.box .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.box .title {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box .bottom {
+    width: 100%;
+    height: 253px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.box .suspen {
+    width: 170px;
+    height: 255px;
+
+}
+
+.box .key {
+    width: 170px;
+    height: 255px;
+
+}
+
+.box .guoqi {
+    width: 170px;
+    height: 255px;
+}
+
+.box .rongliang {
+    width: 170px;
+    height: 255px;
+}
+
+.box .big-title {
+    width: 100%;
+    height: 262px;
+}
+
+.box .big-title .container {
+    width: 566px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.box .image {
+    width: 100%;
+    height: 258px;
+}
+
+.box .image .container {
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.box .image .left-image {
+    width: 199px;
+    height: 142px;
+    line-height: 179px;
+}
+
+.box .image .left-image img {
+    width: 199px;
+    height: auto;
+    display: block;
+    margin-left: 150px;
+}
+
+.box .big-title .middle-image {
+    width: 450px;
+    height: 440px;
+    line-height: 258px;
+    margin-top: 140px;
+    margin-left: 80px;
+}
+
+.box .big-title .middle-image img {
+    width: 450px;
+    height: auto;
+    display: block;
+}
+
+.box .image .right-image {
+    width: 199px;
+    height: 142px;
+    line-height: 179px;
+    margin-right: 105px;
+}
+
+.box .image .right-image img {
+    width: 199px;
+    height: auto;
+    display: block;
+    text-align: center;
+}
+
+.box .circle {
+    width: 100%;
+    height: 213px;
+
+
+}
+
+.box .left-circle {
+    width: 192px;
+    height: 174px;
+
+}
+
+.box .middle-circle {
+    width: 477px;
+    height: 165px;
+
+}
+
+.box .right-circle {
+    width: 261px;
+    height: 164px;
+
+}
+
+.box .circle .container {
+    width: 952px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.box .circle .middle-circle img {
+    width: 110px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.box .wenzi {
+    width: 100%;
+    height: 206px;
+}
+
+.box .wenzi .container {
+    width: 979px;
+    height: 100%;
+
+    margin: 0 auto;
+}
+
+.box .wenzi .happy {
+    width: 144px;
+    height: 36px;
+    ;
+}
+
+.box .wenzi .icont {
+    width: 50px;
+    height: 33px;
+
+}
+
+.box .wenzi .wenzi-top {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .wenzi .wenzi-bottom {
+    width: 100%;
+    height: 105px;
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box .wenzi .one {
+    width: 160px;
+    height: 89px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .wenzi .icont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box .potfo {
+    width: 220px;
+    height: 120px;
+    background-color: #e8645a;
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 265px;
+
+}
+
+.box .right-nav li:hover .potfo {
+    display: block;
+}
+
+.box .potfo .potfo-one {
+    width: 100%;
+    height: 33.3333%;
+}
+
+.box .middle-box .title-tab {
+    font-weight: bold;
+}
+
+.box .middle-box .title-right {
+    background-color: #e8645a;
+}
+
+.box .title-right {
+    width: 202px;
+    height: 54px;
+    text-align: center;
+    line-height: 54px;
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+.box .read {
+    width: 100%;
+    height: 50px;
+    background-color: #e8645a;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box .read-tab {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #76c7c0;
+}
+
+.box .middle-circle-tab {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.box .read {
+    margin-top: 30px;
+}
+
+.box .guoqi .read-tab {
+    margin-top: 16px;
+}
+
+.box .rongliang .read-tab {
+    margin-top: 50px;
+}
+
+.box .big-title .why {
+    color: #e1524c;
+    position: absolute;
+    top: 60px;
+    left: 190px;
+    font-size: 19px;
+}
+
+.box .big-title .why-one {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    font-size: 10px;
+}
+
+.box .circle .left-circle {
+    font-size: 10px;
+    color: #95a09b;
+}
+
+.box .circle .left-circle img {
+    width: 15px;
+    height: 15px;
+}
+
+.box .circle .middle-circle {
+    font-size: 10px;
+}
+
+.box .circle .right-circle {
+    font-size: 10px;
+}
+
+.box .left-nav {
+    margin-top: 20px;
+}
+
+.box .right-nav .page:hover {
+    display: block;
+}
+
+.box .felis {
+    position: absolute;
+    top: 60px;
+    left: 43px;
+}
+
+.box .future-one {
+    position: absolute;
+    top: 80px;
+    left: 150px;
+}
+
+.box .felis-one {
+    position: absolute;
+    top: 60px;
+    left: 170px;
+}
+
+.box .future {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+}
+
+.box .future-two {
+    position: absolute;
+    top: 80px;
+    left: 280px;
+}
+
+.box .felis-two {
+    position: absolute;
+    top: 60px;
+    left: 420px;
+}
+
+.box .future-three {
+    position: absolute;
+    top: 80px;
+    left: 400px;
+}
+
+.box .felis-three {
+    position: absolute;
+    top: 60px;
+    left: 290px;
+}

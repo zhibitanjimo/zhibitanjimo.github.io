@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <ul  class="banner">
+        <li><img src="../1008(1)/banner1.jpg" alt="" /></li>
+        <li><img src="../1008(1)/banner2.jpg" alt="" /></li>
+        <li><img src="../1008(1)/banner3.jpg" alt="" /></li>
+    </ul>
+
+    <button>prev</button>
+    <button>next</button>
+
+    <hr />
+    <ul class="dots">
+        <li class="active"></li>
+        <li></li>
+        <li class="last"></li>
+    </ul>
+    <style>
+        ul {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            background-color: red;
+            transition: all 1s;
+        }
+
+        ul li img {
+            width: 200px;
+            display: block;
+            /* vertical-align: middle; */
+        }
+
+        .dots li {
+            width: 20px;
+            height: 20px;
+            background-color: gray;
+            margin: 5px;
+            border-radius: 50%;
+        }
+
+        .dots li.active {
+            background-color: red;
+        }
+    </style>
+    <script>
+        var ul = document.querySelector("ul");
+        var lis = ul.children;
+        var prev = document.querySelector("button:nth-of-type(1)");
+        var next = document.querySelector("button:nth-of-type(2)");
+        var index = 0;
+        next.onclick = function () {
+            index++;
+            if (index > lis.length - 1) {
+                index = 0;
+            }
+            lis[0].style.marginLeft = index * -200 + "px";
+        };
+        var dots = document.querySelectorAll(".dots li");
+        dots.forEach((item, index) => {
+            item.onclick = function () {
+                lis[0].style.marginLeft = index * -200 + "px";
+                dots.forEach((item) => {
+                    item.classList.remove("active");
+                });
+                this.classList.add("active");
+            };
+        });
+        var currentIndex = 0; // 当前轮播图索引
+        var images = document.querySelectorAll('.banner img'); // 获取所有轮播图片
+        var totalImages = lis.length; // 轮播图总数
+
+        // 设置轮播图自动切换
+        var interval = setInterval(function () {
+            if (currentIndex === lis.length - 1) { // 如果是最后一张
+                currentIndex = 0; // 重置索引为第一张
+            } else {
+                currentIndex++; // 否则，索引加1
+            }
+            // 切换轮播图
+            images[currentIndex].style.display = 'block';
+            for (var i = 0; i < lis.length; i++) {
+                if (i !== currentIndex) {
+                    images[i].style.display = 'none';
+                }
+            }
+        }, 3000); // 3秒切换一次
+    </script>
+</body>
+
+</html>

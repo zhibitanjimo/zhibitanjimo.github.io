@@ -1,0 +1,14 @@
+input::after{
+    /* 去掉边框 */
+      position: relative;
+    /* 去掉内边距 */
+  background-image:  url(D:\24工商H5\上课代码\day5.定位基础\images\放大镜.png);
+  
+	/* 去掉轮廓 */
+	 padding: 0;
+ outline: 0;
+   background-repeat: no-repeat;
+     box-sizing: border-box;
+}
+
+

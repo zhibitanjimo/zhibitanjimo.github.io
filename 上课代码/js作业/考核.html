@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+      function calculateDaysBetween(dateStr1, dateStr2) {
+  // 将日期字符串转换为日期对象
+  const date1 = new Date(dateStr1);
+  const date2 = new Date(dateStr2);
+
+  // 计算时间差（毫秒）
+       var ms=date2-date1;
+       var s = Math.floor(ms / 1000);
+       var day = Math.floor(s / (24 * 3600));
+       return day;
+}
+
+// 测试函数
+console.log(calculateDaysBetween('2024-01-01', '2024-01-15')); // 应该输出 14
+    </script>
+</body>
+</html>

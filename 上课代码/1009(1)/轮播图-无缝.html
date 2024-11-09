@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="box">
+            <ul class="slide">
+                <li>1<img src="../1008(1)/banner1.jpg" alt="" /></li>
+                <li>2<img src="../1008(1)/banner2.jpg" alt="" /></li>
+                <li>3<img src="../1008(1)/banner3.jpg" alt="" /></li>
+                <li>4<img src="../1008(1)/banner4.jpg" alt="" /></li>
+            </ul>
+        </div>
+
+        <button>prev</button>
+        <button>next</button>
+
+        <hr />
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <style>
+            .box {
+                width: 200px;
+                /* height: 200px; */
+                overflow: hidden;
+            }
+            .box ul {
+                width: 600px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                display: flex;
+                transition: all 1s;
+            }
+            ul li {
+                background-color: red;
+            }
+
+            ul li img {
+                width: 200px;
+                display: block;
+                /* vertical-align: middle; */
+            }
+
+            .dots li {
+                width: 20px;
+                height: 20px;
+                background-color: gray;
+                margin: 5px;
+                border-radius: 50%;
+            }
+            .dots li.active {
+                background-color: red;
+            }
+        </style>
+        <script>
+            var slide = document.querySelector("ul.slide");
+            var lisq = document.querySelectorAll("ul.slide li");
+            var lisg = document.getElementsByClassName("slide")[0].getElementsByTagName("li");
+            var lis = slide.children;
+            var prev = document.querySelector("button:nth-of-type(1)");
+            var next = document.querySelector("button:nth-of-type(2)");
+            var dots = document.querySelectorAll(".dots li");
+            var index = 0;
+
+            //
+
+            slide.innerHTML = "";
+            slide.appendChild(lisq[0]);
+
+            // ul.insertBefore(lis[2], lis[0].nextElementSibling);
+            dots.forEach((item, i) => {
+                item.onclick = function () {
+                    change(i);
+
+                    dots.forEach((item) => {
+                        item.classList.remove("active");
+                    });
+                    this.classList.add("active");
+                };
+            });
+
+            function change(i) {
+                console.log(i);
+                if (i > index) {
+                    // 后面插入
+                    slide.style.transition = "all 1s";
+                    slide.insertBefore(lisq[i], lis[0].nextElementSibling);
+                    slide.style.marginLeft = "-200px";
+                    setTimeout(() => {
+                        slide.style.transition = "none";
+                        slide.style.marginLeft = "0";
+                        slide.removeChild(lis[0]);
+                        index = i;
+                    }, 1000);
+                } else {
+                    // 前面插入
+                    slide.style.transition = "none";
+                    slide.insertBefore(lisq[i], lis[0]);
+                    slide.style.marginLeft = "-200px";
+
+                    setTimeout(() => {
+                        slide.style.transition = "all 1s";
+                        slide.style.marginLeft = "0";
+                        setTimeout(() => {
+                            slide.removeChild(lis[1]);
+                        }, 1000);
+                        index = i;
+                    }, 0);
+                }
+            }
+        </script>
+
+        <!-- <ul class="test">
+            <li class="xxx">1</li>
+            <li class="xxx yyy">2</li>
+            <li class="xxx">3</li>
+        </ul>
+        <script>
+            var lisquery = document.querySelectorAll(".test li.xxx"); // 静态的
+            var lisgetElements = document.getElementsByClassName("xxx"); // 动态的
+
+            console.log(lisquery);
+            console.log(lisgetElements);
+
+            // 把xxx去掉
+            // for (var i = 0; i < lisquery.length; i++) {
+            //     lisquery[i].classList.remove("xxx");
+            // }
+
+            document.querySelector("ul.test").removeChild(lisquery[1]);
+
+            console.log(lisquery);
+            console.log(lisgetElements);
+        </script> -->
+    </body>
+</html>

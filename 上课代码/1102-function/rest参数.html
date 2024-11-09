@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            let [a, ...b] = [11, 22, 33, 44];
+            console.log(a, b);
+
+            let { x, ...y } = { x: 1, y: 2, z: 3 };
+            console.log(x, y);
+
+            function xxx() {
+                console.log(arguments, arguments.length);
+                // arguments 所有参数的集合 对象(类数组)
+
+                for (var i = 0; i < arguments.length; i++) {
+                    console.log(arguments[i]);
+                }
+                // 遍历 arguments 只能使用for 不能使用foreach等数组方法
+            }
+            xxx(1, 2);
+            xxx(1, 2, 3);
+        </script> -->
+
+        <!-- <script>
+            // ...rest 剩余的参数放入 一个数组
+            // function xxx(x, ...rest) {
+            function xxx(...rest) {
+                // console.log(arguments, arguments.length);
+                console.log(rest); // 是一个数组 可以使用数组方法
+            }
+            xxx(1, 2);
+            xxx(1, 2, 3);
+        </script> -->
+
+        <!-- 类数组转数组 -->
+        <script>
+            function xxx() {
+                console.log(arguments, arguments.length);
+                // 类数组转数组
+                let arr = Array.prototype.slice.call(arguments);
+                console.log(arr);
+            }
+            xxx(1, 2, 3);
+        </script>
+    </body>
+</html>

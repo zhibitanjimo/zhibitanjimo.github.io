@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function digitalBomb(){
+      var firstrandom = 69;
+        var min = 1;
+        var max = 100;
+        var count = prompt("请输入" + min + "到" + max + "的数字")
+        var random = Math.random() * 101;
+        random = Math.floor(random)
+        while (true) {
+            if (count < firstrandom) {
+                min=count;
+               count= prompt("请输入" + min + "到" + max + "的数字")
+            } else if (count > firstrandom) {
+                  max=count;
+                 count= prompt("请输入" + min + "到" + max + "的数字")         
+            }
+            else {  count=alert("你最后的数字为:"+count)
+                break;
+             }
+        }
+    }
+    digitalBomb();
+        // function digitalBomb() {
+        //     // 生成一个1到100之间的随机数
+        //     let randomNumber = Math.floor(Math.random() * 100) + 1;
+        //     let min = 1;
+        //     let max = 100;
+        //     console.log(`随机数是: ${randomNumber}，但不告诉你！`);
+        //     while (true) {
+        //         let userGuess = prompt(`请输入${min}-${max}以内的数`);
+        //         userGuess = parseInt(userGuess, 10);
+        //         if (userGuess < min || userGuess > max) {
+        //             alert(`你的数字超出了范围，请重新输入${min}-${max}以内的数。`);
+        //             continue;
+        //         }
+        //         if (userGuess < randomNumber) {
+        //             min = userGuess;
+        //             alert(`太小了！请重新输入${min}-${max}以内的数。`);
+        //         } else if (userGuess > randomNumber) {
+        //             max = userGuess;
+        //             alert(`太大了！请重新输入${min}-${max}以内的数。`);
+        //         } else {
+        //             alert(`恭喜你！你猜对了数字是${randomNumber}。`);
+        //             break;
+        //         }
+        //     }
+        // }
+
+        // digitalBomb();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

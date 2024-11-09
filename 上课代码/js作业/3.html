@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var height =prompt("请输入你的身高")
+        var weight =prompt("请输入你的体重") 
+        var standardWeight = (height - 108) * 2;
+        var weightDifference = weight - standardWeight;
+        if (weightDifference === 0) {
+            alert('身材非常完美,以后可以随便吃喝了');
+        } else if (weightDifference > 0 && weightDifference <= 10) {
+            alert('不用担心，微胖而已');
+        } else if (weightDifference > 10) {
+            alert('真的太胖，需要减肥了');
+        } else if (weightDifference < 0 && weightDifference >= -10) {
+            alert('不用担心，偏瘦而已');
+        } else {
+            alert('实在是太瘦，平时多吃些吧');
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+  .box {
+      width: 119px;
+      height: 120px;
+      /*圆角属性 */
+      border-radius: 10px;
+      background-color: bisque;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding-left: 5px;
+      box-sizing: border-box;
+      float: left;
+      margin-right: 20px;
+  }
+
+  .box>.child {
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      /* 圆形 */
+      border-radius: 50%;
+      padding: 2px;
+  }
+
+  .box1 {
+      width: 119px;
+      height: 120px;
+      /*圆角属性 */
+      border-radius: 10px;
+      background-color: bisque;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 5px;
+      float: left;
+  }
+
+  .box1>.child {
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      /* 圆形 */
+      border-radius: 50%;
+      margin-top: 3px;
+  }
+
+  .box2 {
+      width: 119px;
+      height: 120px;
+      /*圆角属性 */
+      border-radius: 10px;
+      background-color: bisque;
+      display: flex;
+      justify-content: center;
+      padding-left: 5px;
+      float: left;
+  }
+
+  .box2>.child {
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      /* 圆形 */
+      border-radius: 50%;
+      margin-top: 3px;
+  }
+
+  .box3 {
+      float: left;
+  }
+
+  .box4 {
+      align-items: start;
+      justify-content: end;
+      float: left;
+  }
+
+  .box5 { float: left;
+      justify-content: flex-start;
+    
+  }
+  .box6{
+    justify-content: center;
+    align-items: flex-end;
+  }
+.box7{
+            align-items: flex-end;
+            justify-content: flex-end;
+}
+.box8{
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.box9{
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.box10{
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.box11{
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column; 
+}
+.box12{        flex-direction: row-reverse;    
+                     justify-content: flex-start;   
+                     justify-content: space-between;    
+} 
+.box13{
+                 flex-wrap: wrap;
+                 justify-content: space-between;
+}
+.box14{
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    justify-content:flex-end;
+    justify-content: space-around;
+}
+.box15>.list{
+               align-self: center;
+               justify-content: center;
+}
+.box16{
+              justify-content: flex-start;
+}
+.box17{
+    width: 119px;
+    height: 120px;
+    /*圆角属性 */
+    border-radius: 10px;
+    background-color: bisque;
+    display: flex;
+}
+.box17 .one,.box17 .two{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    /* 圆形 */
+    border-radius: 50%;
+    padding: 2px;
+}
+.box17>.two{
+    align-self: center;
+}
+.box18{
+    width: 119px;
+    height: 120px;
+    /*圆角属性 */
+    border-radius: 10px;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+}
+.box18 .three,.box18 .four{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    /* 圆形 */
+    border-radius: 50%;
+    padding: 2px;
+}
+.box18>.four{
+       align-self: flex-end;
+}
+.box19{
+    width: 119px;
+    height: 120px;
+    /*圆角属性 */
+    border-radius: 10px;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+}
+.box19 .five,.box19 .six,.box19 .seven{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    /* 圆形 */
+    border-radius: 50%;
+    padding: 2px;
+}
+.box19>.seven{
+       align-self: flex-end;
+}
+.box19>.six{
+    align-self: center;
+}
+.box15>.ten{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    /* 圆形 */
+    border-radius: 50%;
+    padding: 2px;
+    align-self: flex-start;
+}
+.box16 .nine{
+    width: 30px;
+      height: 30px;
+      background-color: black;
+      /* 圆形 */
+      border-radius: 50%;
+      padding: 2px;
+         justify-content: space-between;
+}
+    
+

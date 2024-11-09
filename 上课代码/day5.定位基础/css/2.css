@@ -1,0 +1,41 @@
+.serach{
+    width: 918px;
+    height: 60px;
+    position: relative;
+}
+.serach input{
+    width: 100%;
+    height: 100%;
+    padding-left: 55px;
+    box-sizing: border-box;
+
+}
+.serach .redbox{
+    display: block;
+    width: 22px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    margin-left: 10px;
+    
+}
+.serach .bluebox{
+    display: block;
+width: 23px;
+height: 20px;
+background-color: cyan;
+position: absolute;
+right: 70px;
+top: 25px;
+}
+.serach .orange{
+    display: block;
+      width: 23px;
+      height: 20px;
+      background-color: orange;
+      position: absolute;
+      right: 30px;
+      top: 24px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input {
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cart"></div>
+    <script>
+        var title = ['名称', '价格', '颜色', '重量', '减少', '数量', '添加', '总价', '操作'];
+        var product = [
+            ['小米手机', 1500, '黑色', '0.5kg', 1500],
+            ['华为手机', 1698, '蓝色', '0.45kg', 1698],
+            ['iphoneX', 7899, '红色', '0.6kg', 7899]
+        ];
+        var cartHtml = '<table>';
+        cartHtml += '<tr>';
+        cartHtml += '<td>' + '<input type="checkbox">' + '</td>';
+        for (var i = 0; i < title.length; i++) {
+            cartHtml += '<td>' + title[i] + '</td>';
+        }
+        cartHtml += '</tr>';
+        product.forEach(function (item, index) {
+            cartHtml += '<tr>';
+            cartHtml += '<td>' + '<input type="checkbox">' + '</td>'; // 添加行号
+            cartHtml += '<td>' + item[0] + '</td>';
+            cartHtml += '<td>' + item[1] + '</td>';
+            cartHtml += '<td>' + item[2] + '</td>';
+            cartHtml += '<td>' + item[3] + '</td>';
+            cartHtml += '<td>-</td>';
+            cartHtml += '<td><input placeholder="1"></td>';
+            cartHtml += '<td>+</td>';
+            cartHtml += '<td>' + item[1] + '</td>'; // 初始总价
+            cartHtml += '<td>删除</td>';
+            cartHtml += '</tr>';
+        });
+        cartHtml += '</table>';
+        document.write(cartHtml)
+
+    </script>
+</body>
+
+</html>

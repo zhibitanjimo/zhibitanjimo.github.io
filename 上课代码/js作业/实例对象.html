@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+  <script>
+
+    // 定义一个构造函数
+  function Person(name, age) {
+  this.name = name; // 设置对象的'name'属性
+  this.age = age;   // 设置对象的'age'属性
+    this.sayHello = function() { // 设置对象的'greet'方法
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  };
+}
+
+// 使用构造函数创建实例对象
+const person1 = new Person('Kimi', 30);
+const person2 = new Person('Alice', 25);
+    console.log(person1);
+    console.log(person2);
+    
+    
+// 使用实例对象的方法
+person1.sayHello(); // 输出：Hello, my name is Kimi and I am 30 years old.
+person2.sayHello(); // 输出：Hello, my name is Alice and I am 25 years old.
+</script>
+</body>
+</html>

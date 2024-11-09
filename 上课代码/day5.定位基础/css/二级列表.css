@@ -1,0 +1,91 @@
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar>li {
+    width: 90px;
+    height: 40px;
+    margin-right: 15px;
+    text-align: center;
+    line-height: 40px;
+    color: #dfdcdb;
+}
+
+.child {
+    width: 532px;
+    height: 452px;
+    position: absolute;
+    top: 0px;
+    left: 240px;
+    color: #5b5b5b;
+       
+    display: none;
+}
+
+/* 鼠标悬浮时的样式 */
+.navbar>li:hover .child {
+    /* 显示元素 */
+    display: block;
+}
+
+.child li {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* 不能溢出隐藏，因为二级列表溢出 */
+.child i {
+    display: block;
+    clear: both;
+}
+
+.child .shuzi {
+    float: right;
+    position: absolute;
+    left: 180px;
+    top: 0;
+}
+
+.child li img {
+    width: 22px;
+    height: 22px;
+}
+
+
+
+  .child .phone,
+ .child .dianshi,
+.child .tieba,
+.child .wangpan,
+.child .chumeng,
+.child .gengduo{
+    /* 高度决定宽度,高度固定,宽度自适应 */
+    width: auto;
+    height: 100%;
+    display: block;
+    border: 1px solid #000;
+ }
+
+.box
+{
+    background-color: #716963;
+    width: 238px;
+    height: 460px;
+    position: relative;
+}
+.box  li{
+     width: 232px;
+     height: 43px;
+     text-align: left;
+}
+ .box  span{
+    position: absolute;
+    left: 206px;
+ }
+ li:hover{
+    background-color: #ff6700;
+ }

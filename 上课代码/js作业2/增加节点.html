@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是老大</li>
+    </ul>
+    <script>
+        // var div=document.createElement('div')
+        // console.log(div);
+        //   document.body.appendChild(div)
+        var ul=document.querySelector('ul');
+        for(var i=0;i<5;i++){
+            var li=document.createElement('li');
+            ul.appendChild(li);
+             li.innerHTML="我是第个li";
+        }
+       
+    </script>
+</body>
+</html>

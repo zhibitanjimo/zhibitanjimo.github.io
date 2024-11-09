@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            for (var i = 0; i < 5; i++) {
+                console.log("for循环内部", i);
+
+                setTimeout(function () {
+                    console.log("定时器(异步)内部", i);
+                }, 1000);
+            }
+        </script> -->
+
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+        </ul>
+        <!-- <script>
+            var lis = document.querySelectorAll("li");
+
+            // for循环使用  var i = 0 i变量会暴露到全局
+            for (var i = 0; i < lis.length; i++) {
+                console.log("for循环内部", i);
+
+                lis[i].onclick = function () {
+                    // 函数内部是异步的，i是函数定义时候的变量，每次循环的时候，i的值都是5
+                    // 等点击的时候，循环早就完成了
+                    console.log("点击了", i);
+                };
+            }
+
+            console.log("全局访问", i);
+        </script> -->
+
+        <!-- <script>
+            var lis = document.querySelectorAll("li");
+
+            // 计数器i只在for循环体内有效，在循环体外引用就会报错
+            // 使用let声明变量不会暴露到全局
+            // 当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量
+            for (let i = 0; i < lis.length; i++) {
+                console.log("for循环内部", i);
+
+                lis[i].onclick = function () {
+                    console.log("点击了", i);
+                };
+            }
+
+            // console.log("全局访问", i);
+            // i is not defined
+        </script> -->
+
+        <!-- <script>
+            for (let i = 0; i < 5; i++) {
+                console.log("for循环内部", i);
+
+                setTimeout(function () {
+                    console.log("定时器(异步)内部", i);
+                }, 0);
+            }
+        </script> -->
+
+        <!-- let没有变量提升 -->
+        <!-- <script>
+            var a = 10;
+            console.log(a);
+            console.log(b);
+            var b = 20; // var b; b=20
+            // 使用var 声明的变量 如果先使用后声明 就会变量提升
+            // 每次代码运行的时候 先把当前作用域内的所有变量声明提升到当前作用域顶部
+        </script> -->
+        <!-- <script>
+            let a = 10;
+            console.log(a);
+            // console.log(b);  let声明的变量没有变量提升(先使用后声明会报错)
+            // Cannot access 'b' before initialization
+            let b = 20;
+        </script> -->
+
+        <!-- 暂时性死区 -->
+        <!-- <script>
+            var a = 10;
+            var b = 11;
+            function xxx() {
+                console.log(a, b);
+                var b = 20;
+            }
+            xxx();
+        </script> -->
+
+        <!-- <script>
+            let a = 10;
+            let b = 11;
+            function xxx() {
+                console.log(a, b);
+                let b = 20;
+                // let没有变量提升 在let作用域内先使用后声明 [暂时性死区]
+            }
+            xxx();
+        </script> -->
+
+        <!-- let var区别
+            1 let比var多增加了块级作用域
+            2 let没有变量提升,需要注意[暂时性死区]
+            3 let不允许重复声明
+            4 window global区别
+        -->
+
+        <script>
+            var tmp = new Date();
+
+            function f() {
+                console.log(tmp);
+                if (false) {
+                    var tmp = "hello world";
+                }
+            }
+
+            f(); // undefined
+        </script>
+    </body>
+</html>

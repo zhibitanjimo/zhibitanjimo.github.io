@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        var arr = ["aa", "bb", "aa", "cc", "cc", "cc", "dd", "ee", "bb"];
+        // 实现方式1. 不操作原数组, 创建新数组, 把结果输出成新数组 (必须用数组的api实现)
+        var newArr = arr.filter(function (item, index) {
+            return arr.indexOf(item) == index;
+        })
+        console.log(newArr);
+
+        var arr = ["aa", "bb", "aa", "cc", "cc", "cc", "dd", "ee", "bb"];
+
+        // 实现方式2. 不创建新数组, 直接操作原数组, 在原数组上进行修改 (必须用数组的api实现)
+        
+     
+
+        var arr = ["aa", "bb", "cc", "", "", "dd", "ee", ""]
+        // 创建新数组, 直接操作原数组  (可以用数组的api实现);
+        var i = arr.filter(function (item, index) {
+            if (arr.indexOf(item) == "") {
+                return true
+            } else {
+                return item
+            }
+        })
+        console.log(i);
+
+        var arr = ["aa", "bb", "cc", "", "", "dd", "ee", ""];
+
+        // 实现方式2. 创建新数组, 不修改原数组, (不能出现数组的api)
+        var result = "";
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] !== "") {
+                if (result === "") {
+                    result = arr[i];
+                } else {
+                    result += "," + arr[i];
+                }
+            }
+        }
+        result = result.split(",");
+        console.log(result);
+
+          // 自己封装myindexof方法: 
+        var arr = ["aa", "bb", "cc", "dd"];
+        function indexOf(array, searchElement, fromIndex = 0) {
+            for (var i = fromIndex; i < array.length; i++) {
+                if (array[i] === searchElement) {
+                    return i;
+                }
+            }
+        }
+        console.log(indexOf(arr, "dd"));     
+        var str="你好世界hellowrold";
+            console.log(str.charAt(0));
+             var i=str.slice(1,4)
+             console.log(i);
+             var j=str.split("")
+               console.log(j);
+               
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+
+
+            var text = prompt("请输入内容");
+            // var text = "今天一起聚餐,我坐小孩那桌!";
+
+
+            // 1. 切割成数组
+            var arr = text.split("");
+            // console.log(arr); // ['今', '天', '一', '起', '聚', '餐', ',', '我', '坐', '小', '孩', '那', '桌']
+
+            // 2. 遍历arr, 拿到每一项
+            arr = arr.map(function (item) {
+                  // console.log(item); // 数组的每一项, 字符串
+
+                  // 把每一项转成unicode编码
+                  var code = item.charCodeAt();
+
+                  // code不足五位的编码, 用0补够五位
+                  if (String(code).length != 5) {
+                        code = "0".repeat(5 - 2) + code;
+                  }
+
+                  // console.log(code, String(code).length); // 00044
+                  return code; // unicode编码 映射 原来的字符串
+            })
+
+            // 得到编码后的数组
+            // console.log(arr); // [20170, 22825, 19968, 36215, 32858, 39184, '00044', 25105, 22352, 23567, 23401, 37027, 26700, '00033']
+
+
+            // 反转数组(数字没变), 把数组连接成字符串
+            var password = arr.reverse().join("");            
+            console.log(password); // 0003326700370272340123567223522510500044391843285836215199682282520170
+            
+
+      </script>
+</body>
+
+</html>

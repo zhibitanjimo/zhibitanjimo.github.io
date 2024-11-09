@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            li.active {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" title="abc">box元素</div>
+        <ul class="xxx">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li class="active">item 3</li>
+            <!-- xxx -->
+            <li>item 4</li>
+            <li>item 5</li>
+        </ul>
+
+        <!-- Document 文档节点  -->
+        <!-- 元素节点 属性节点 文本节点 注释节点 -->
+        <script>
+            var box = document.querySelector(".box");
+            var ul = document.querySelector("ul");
+
+            // 新创建的元素
+            var node = document.createElement("li");
+            node.innerText = "item new";
+            ul.appendChild(node);
+
+            // appendChild 往末尾追加 (新创建的添加 本来页面已经存在的元素 移动)
+            var lisp = document.querySelector("li.active");
+            // ul.appendChild(lisp);
+            // ul.appendChild(lisp.cloneNode(true));
+
+            console.log(box.attributes);
+            console.log(box.childNodes);
+            console.log(ul.childNodes);
+            for (var i = 0; i < ul.childNodes.length; i++) {
+                console.log("===", ul.childNodes[i].tagName, ul.childNodes[i].nodeName, ul.childNodes[i].nodeType);
+
+                if (ul.childNodes[i].nodeType === 1) {
+                    console.log(ul.childNodes[i], ul.childNodes[i].nodeType);
+                }
+            }
+
+            console.log(ul.children);
+
+            console.log(lisp.tagName, lisp.nodeName);
+
+            document.body.appendChild(ul.cloneNode());
+            document.body.appendChild(ul.cloneNode(true));
+
+            console.log("firstChild", ul.firstChild);
+            console.log("firstElementChild", ul.firstElementChild);
+            // element.lastChild	返回最后一个子节点
+            // element.lastElementChild  子元素第一个 最后一个
+
+            console.log(lisp.nextElementSibling); // 下一个  上一个
+            console.log(lisp.parentNode);
+        </script>
+    </body>
+</html>

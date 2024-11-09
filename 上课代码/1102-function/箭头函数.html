@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function xxx(a, b) {
+                return a + b;
+            }
+
+            const yyy = function (a, b) {
+                return a + b;
+            };
+
+            const zzz = (a, b) => {
+                return a + b;
+            };
+
+            const z1 = (a, b) => a + b;
+
+            const z2 = () => {
+                return {
+                    name: "nick",
+                    age: 18,
+                };
+            };
+            console.log(z2());
+
+            const z3 = () => ({
+                name: "nick",
+                age: 18,
+            });
+
+            console.log(z2());
+        </script>
+
+        <!-- 
+        箭头函数与普通函数区别  
+        1 this指向 箭头函数没有this
+        2 不能写成构造函数
+        3 不能使用arguments 只能使用...rest
+        4 不能使用yield迭代器
+        -->
+    </body>
+</html>

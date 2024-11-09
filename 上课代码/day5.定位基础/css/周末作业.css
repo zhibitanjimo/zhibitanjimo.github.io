@@ -1,0 +1,304 @@
+.box{
+    width: 100%;
+    height: 105px;
+        
+
+    
+}
+.box .container{
+    width: 1113px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    border:  2px solid #f6f7f8 ;
+}
+.box .left{
+    width: 124px;
+    height: 40px;
+    position: absolute;
+    left: 40px;
+    top: 45px;
+}
+.box .middle{
+               
+width: 435px;
+height: 60px;
+     position: absolute;
+     left: 300px;
+     top:45px;
+    
+}
+.box .right{
+    width: 173px;
+    height: 33px;
+
+    position:absolute ;
+    right:105px;
+    top: 60px;
+}
+.middle input{
+    margin-top: 20px;
+      width: 300px;
+       height: 20px;
+       position: absolute;
+       top:13px;
+       left:60px;
+       box-sizing: border-box;
+}
+input {
+    border-radius: 5px 0px 0px 5px;
+    padding: 0;
+    outline: none;
+    padding-left: 23px;
+    box-sizing: border-box;
+     border: 1px solid #c3edf1;
+    margin-top: -60px;
+}   
+.middle .guangzhou{
+    display: block;
+    height: 10px;
+
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+   
+
+.middle .serach{
+    display: block;
+    width: 40px;
+    height: 20px;
+    background-color: antiquewhite;
+    position: absolute;
+    left: 360px;
+    top:33px;
+}
+.guangzhou img{display: block;
+    width: 20px;
+    height: 20px;
+               position: absolute;
+               left: -17px;
+               top: -1px;
+               padding-right: 15px;
+}
+.fangda img{ display: block;
+    width: 20px;
+    height: 15px;
+               position: absolute;
+               left: 0px;
+               top: 33px;
+               z-index: 1;
+               margin-left: -22px;
+}
+.middle .guangzhou{
+       margin-left: 15px;
+}
+.right .zuji{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+       margin-top: -8px;
+       color:#acacac;
+}
+.right .xiaoxi{
+    position: absolute;
+    left: 60px;
+    top: 10px;
+    margin-top: -8px;
+    color:#acacac;
+}
+.right .shoucang{
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    margin-top: -8px;
+    margin-left: 5px;
+    color:#acacac;
+}
+.right img{
+    height: 30px;
+    position: absolute;
+    left: 140px;
+    top: 0;
+     margin-left: 15px;
+}
+.box1 li{
+  float: left;
+  margin-left: 30px;
+  padding: 0;
+  /* 去除列表的标志 （列表的实心圆、数字标志） */
+  list-style: none;
+  margin-bottom: 10px;
+ 
+}
+.list{
+    float: left;
+       margin-top: 10px;
+       clear: left;
+       margin-left: 70px;
+       color: #a7a8aa;
+       font-size: 10px;
+}
+.ming{
+    float: left;
+    clear: left;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+.box2 .left-box img{
+    float: left;
+    clear: left;
+     margin-left: 75px;
+     width: 175px;height:  130px;
+}
+.box2 .left-box{
+    float: left;
+    clear: left;
+    position: relative;
+}
+.left-box  .wenzi{
+    position: absolute;
+    left: 100px;
+    top:130px;
+}
+.container .wenzi{
+    width: 300px;
+}
+.middle-box{
+    float: left;
+    margin-left: 155px;
+    margin-bottom: 20px;
+}
+.right-box{
+    margin-left: 50px;
+    float: left;
+}
+.right-box img{
+    width: 175px;
+    height: 130px;
+}
+.middle-box img{
+    width: 175px;
+    height: 130px;
+}
+  .box2 .container{
+    width: 100%;
+    height: 100%;
+ }
+.box3 li{
+    float:left;
+    display: block;
+    margin-left: 20px;
+  
+   
+}
+ .box3 .top{
+    width: 100%;
+   float: left;
+   clear: left;
+   background-color: #414141;
+   padding-top: 20px;
+ }
+     .box3 .guanfang{
+        margin-top: -5px;
+        margin-left: 400px;
+     }
+     .box3 .guanfang img{
+         width: 20px;
+         height: 20px;
+     }
+     .box3 .weixin img{
+        width: 20px;
+        height: 20px;
+    }
+  .box3 .weixin{
+    color: #969696;
+    margin-top: -5px;
+  }
+  .bottom li{
+        margin-top: 15px;
+  }
+ 
+ hr{
+    float: left;
+    clear: left;
+ }
+ 
+ 
+ .box2 .wang{
+
+          margin-left: 60px;
+
+ }
+ .box2 .yangxue{
+    margin-left: 60px;
+ }
+
+ 
+.box3 .bottom{
+    background-color:#414141 ;
+    float: left;
+}
+.box3 .top li{
+    color: #ffffff;
+}
+.box3 .bottom li{
+    color:#555555 ;
+    font-size: 15px;
+}
+.box3 .guanfang{
+    color: #696969;
+}
+         
+            .middle{
+                     position: relative;
+                     float: left;
+            }
+
+ .middle  .images{
+    position: absolute;
+    left: 90px;
+    bottom: 20px;
+    width: 15px;
+    height: 15px;
+              float: right;
+}
+
+
+    
+
+.box .guangzhou img{
+             width: 20px;
+             height: 20px;
+      
+            
+             
+}
+.box .guangzhou{
+    margin-top: 2px;
+    color: #dddddd;
+}
+ 
+.box .serach{
+    background-color: #29b7f5;
+}
+  .box .middle{
+    margin-top: -22px;
+ }
+   .box3 .container{
+    width: 100%;
+    height: 50px;
+   }
+ .box1 .content ul{
+    overflow: hidden;
+ }
+  .box3 .top ul{
+    overflow: hidden;
+  }
+.box2{
+    width: 100%;
+    height: 50px;
+}
+  .navbar{ width: 1200px;
+         height: 50px;
+  }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clipboard Reader</title>
+</head>
+<body>
+  <h1>从剪贴板粘贴内容</h1>
+  <button id="copyButton">粘贴内容</button>
+  <p id="content"></p>
+
+  <script>
+    document.getElementById('copyButton').addEventListener('click', async function() {
+      try {
+        // 请求读取剪贴板内容
+        const text = await navigator.clipboard.readText();
+        document.getElementById('content').innerText = text;
+      } catch (err) {
+        console.error('Failed to read clipboard contents: ', err);
+        document.getElementById('content').innerText = 'Failed to read clipboard contents.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function array(arr) {
+            // 定义空数组，存放合并后的数组元素
+            var newarr = [];
+            // 遍历二维数组
+            arr.forEach(function (newarrone) {
+                // 将遍历后的一维数组和空数组连接，合并成新数组
+                newarr = newarr.concat(newarrone);
+            });
+            // 定义空数组，存放去重后的数组元素
+            var newarrtwo = [];
+            //  使用forEach方法遍历newarr的每一个数组项,接受参数为数组项
+            newarr.forEach(function (item) {
+                // 使用indexof方法判断newarr2数组中是否已经存在当前遍历到的元素,不存在则返回-1,将不存在的数组项推到newarr2数组中
+                if (newarrtwo.indexOf(item) === -1) {
+                    newarrtwo.push(item);
+                }
+            })
+            //  将得到的数组进行升序处理
+            newarrtwo.sort(function (a, b) {
+                return a - b;
+            })
+            return newarrtwo;
+        }
+        //代码测试
+           
+        console.log(array([[1, 3, 2], [5, 2, 1, 4], [2, 1]]));
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

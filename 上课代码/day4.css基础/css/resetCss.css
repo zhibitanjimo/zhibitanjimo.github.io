@@ -1,0 +1,43 @@
+/*  
+    问题：浏览器有默认样式, 
+        不同的浏览器默认样式不同，
+        导致一个页面在不同浏览器会有不同显示效果 
+*/
+
+/* 重置浏览器默认样式（resetCss）: http://meyerweb.com/eric/tools/css/reset/ */
+html,
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a {
+    /* 继承父元素的颜色属性  inherit(继承)*/
+    color: inherit;
+    /* 去掉a标签的下划线 */
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    /* 去除列表的标志 （列表的实心圆、数字标志） */
+    list-style: none;
+}
+
+input {
+    padding: 0;
+    border: none;
+    outline: none;
+}

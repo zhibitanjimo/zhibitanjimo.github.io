@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: "阿里体";
+    src: url(../font/FZBaiZWGTJW.TTF);
+}
+div{
+    width: 400px;
+    height: 250px;
+    font-family: "阿里体";
+    background-image: url("../../day4.css基础/images/百度.png");
+    background-repeat:repeat-x;
+    background-color: aqua;
+    background-position:50px 50px;
+
+}

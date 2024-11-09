@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易商品管理系统</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* CSS样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>简易商品管理系统</h1>
+    <form id="productForm">
+        名称:<input type="text" id="name">  <br>
+        价格:<input type="text" id="price">   <br>
+        库存:<input type="text" id="stock">  <br>
+        图片:<input type="file" accept="image/*">  <br>
+        <button type="button" id="addButton">添加商品</button>
+    </form>
+    
+    <input type="text" id="searchInput" placeholder="输入商品名称搜索">
+    <button type="button" id="searchButton">搜索商品</button>
+    <table id="productTable">
+        <tr>
+            <th>名称</th>
+            <th>价格</th>
+            <th>库存</th> 
+            <th>预览</th>
+            <th>操作</th>
+        </tr>
+        <!-- 商品信息行将被动态添加 -->
+    </table>
+    <div>Total Stock: <span id="totalStock">0</span></div>
+    <script>
+        $(document).ready(function() {
+            let products = []; // 存储商品数据
+           $('#searchButton').click(function() {
+                let searchQuery = $('#searchInput').val();
+                $('#productTable').find('tr:gt(0)').remove(); // 清空除标题外的所有行
+                let foundProducts = products.filter(product => product.name.includes(searchQuery));
+                foundProducts.forEach(product => addProductToTable(product));
+                $('#totalStock').text(foundProducts.reduce((sum, product) => sum + parseInt(product.stock), 0));
+            });
+
+            $('#addButton').click(function() {
+                let name = $('#name').val();
+                let price = $('#price').val();
+                let stock = $('#stock').val();
+                let file = $('#productForm input[type=file]')[0].files[0];
+                if (!name || !price || !stock) {
+                    alert('请填写所有字段');
+                    return;
+                }
+               let newProduct = {
+                    name: name,
+                    price: price,
+                    stock: stock,
+                    file: file
+                };
+                products.push(newProduct);
+                addProductToTable(newProduct);
+                updateTotalStock();
+            });
+
+            function addProductToTable(product) {
+                let row = `<tr>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td>${product.stock}</td>
+                    <td><img src="${URL.createObjectURL(product.file)}" height="50" /></td>
+                    <td><button type="button" class="deleteButton">删除</button></td>
+                </tr>`;
+                $('#productTable').append(row);
+            }
+
+            function updateTotalStock() {
+                let total = products.reduce((sum, product) => sum + parseInt(product.stock), 0);
+                $('#totalStock').text(total);
+            }
+
+            $(document).on('click', '.deleteButton', function() {
+                $(this).closest('tr').remove();
+                products = products.filter(product => product.name !== $(this).closest('tr').find('td').eq(0).text());
+                updateTotalStock();
+            });
+        });
+   
+      
+    </script>
+</body>
+</html>

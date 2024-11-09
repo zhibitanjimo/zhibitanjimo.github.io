@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Snake Game</title>
+<style>
+  canvas {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+<button id="startButton">开始</button>
+<button id="pauseButton">暂停</button>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scale = 20;
+const rows = canvas.height / scale;
+const columns = canvas.width / scale;
+
+let snake = [];
+snake[0] = {
+  x: 9 * scale, // 初始位置
+  y: 10 * scale
+};
+
+let apple = {
+  x: Math.floor(Math.random() * columns - 1) * scale,
+  y: Math.floor(Math.random() * rows - 1) * scale
+};
+
+let direction = 'right';
+const speed = 7;
+let intervalTime = 200;
+let gameInterval;
+let isPaused = false;
+
+// 画蛇
+function drawSnake() {
+  for (let i = 0; i < snake.length; i++) {
+    ctx.fillStyle = (i === 0) ? 'green' : 'white';
+    ctx.fillRect(snake[i].x, snake[i].y, scale, scale);
+    ctx.strokeStyle = 'black';
+    ctx.strokeRect(snake[i].x, snake[i].y, scale, scale);
+  }
+}
+
+// 画苹果
+function drawApple() {
+  ctx.fillStyle = 'red';
+  ctx.fillRect(apple.x, apple.y, scale, scale);
+}
+
+// 检查蛇是否碰到自己或墙壁
+function isGameOver() {
+  for (let i = 0; i < snake.length - 1; i++) {
+    if (snake[0].x === snake[i + 1].x && snake[0].y === snake[i + 1].y) return true;
+  }
+  return snake[0].x < 0 || snake[0].x >= canvas.width ||
+         snake[0].y < 0 || snake[0].y >= canvas.height;
+}
+
+// 移动蛇
+function moveSnake() {
+  const head = {x: snake[0].x, y: snake[0].y};
+  switch (direction) {
+    case 'up': head.y -= scale; break;
+    case 'down': head.y += scale; break;
+    case 'left': head.x -= scale; break;
+    case 'right': head.x += scale; break;
+    default: break;
+  }
+
+  // 鼠标控制蛇移动
+  canvas.addEventListener('click', (e) => {
+    const dx = e.offsetX - snake[0].x;
+    const dy = e.offsetY - snake[0].y;
+    if (Math.abs(dx) > Math.abs(dy)) {
+      direction = (dx > 0) ? 'right' : 'left';
+    } else {
+      direction = (dy > 0) ? 'down' : 'up';
+    }
+  });
+
+  snake.unshift(head);
+
+  if (head.x === apple.x && head.y === apple.y) {
+    // 吃苹果
+    apple = {
+      x: Math.floor(Math.random() * columns - 1) * scale,
+      y: Math.floor(Math.random() * rows - 1) * scale
+    };
+  } else {
+    snake.pop();
+  }
+}
+
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawApple();
+  drawSnake();
+  moveSnake();
+
+  if (isGameOver()) {
+    clearInterval(gameInterval);
+    alert('游戏结束！');
+  }
+}
+
+document.getElementById('startButton').addEventListener('click', () => {
+  if (!gameInterval) {
+    gameInterval = setInterval(gameLoop, intervalTime);
+  }
+});
+
+document.getElementById('pauseButton').addEventListener('click', () => {
+  isPaused = !isPaused;
+  if (isPaused) {
+    clearInterval(gameInterval);
+  } else {
+    gameInterval = setInterval(gameLoop, intervalTime);
+  }
+});
+
+</script>
+</body>
+</html>

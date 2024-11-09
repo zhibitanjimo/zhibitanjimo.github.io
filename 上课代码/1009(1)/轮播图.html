@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li><img src="../1008/banner1.jpg" alt="" /></li>
+            <li><img src="../1008/banner2.jpg" alt="" /></li>
+            <li><img src="../1008/banner3.jpg" alt="" /></li>
+        </ul>
+
+        <button>prev</button>
+        <button>next</button>
+
+
+
+        <style>
+            ul {
+                width: 200px;
+                height: 200px;
+                /* overflow: hidden; */
+
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                display: flex;
+            }
+            ul li {
+                background-color: red;
+                position: absolute;
+                top: 0;
+                left: 0;
+                /* font-size: 0; */
+
+                opacity: 0;
+                transition: all 1s;
+            }
+            ul li:nth-child(1) {
+                opacity: 1;
+            }
+            ul li img {
+                width: 200px;
+                display: block;
+                /* vertical-align: middle; */
+            }
+
+        </style>
+        <script>
+            var ul = document.querySelector("ul");
+            var lis = ul.children;
+
+            var index = 0;
+            var prev = document.querySelector("button:nth-of-type(1)");
+            var next = document.querySelector("button:nth-of-type(2)");
+
+            next.onclick = function () {
+                index++;
+                if (index > lis.length - 1) {
+                    index = 0;
+                }
+                for (var i = 0; i < lis.length; i++) {
+                    if (i == index) {
+                        lis[i].style.opacity = 1;
+                    } else {
+                        lis[i].style.opacity = 0;
+                    }
+                }
+            };
+        </script>
+    </body>
+</html>

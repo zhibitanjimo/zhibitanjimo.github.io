@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫影电影购票</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie {
+            background: #e9e9e9;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .seats {
+            background: #e9e9e9;
+            padding: 10px;
+        }
+
+        .seat-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .seat {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .seat.available:hover {
+            background-color: #bada55;
+        }
+
+        .seat.unavailable {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #bookButton {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #bookButton:hover {
+            background-color: #0056b3;
+        }
+
+        #totalPrice {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>猫影电影购票</h1>
+        <div class="movie">
+            <h2>电影名称：《猫影行动》</h2>
+            <p>上映时间：2024-10-10 20:00</p>
+            <p>票价：￥60</p>
+        </div>
+        <div class="seats">
+            <h3>选择座位</h3>
+            <div class="seat-row">
+                <div class="seat available" data-price="60">1A</div>
+                <div class="seat available" data-price="60">1B</div>
+                <div class="seat available" data-price="60">1C</div>
+                <div class="seat unavailable">1D</div>
+                <div class="seat unavailable">1E</div>
+            </div>
+            <div class="seat-row">
+                <div class="seat available" data-price="60">2A</div>
+                <div class="seat available" data-price="60">2B</div>
+                <div class="seat unavailable">2C</div>
+                <div class="seat available" data-price="60">2D</div>
+                <div class="seat available" data-price="60">2E</div>
+            </div>
+        </div>
+        <button id="bookButton">确认选座</button>
+        <div id="totalPrice">总价：￥0</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const seats = document.querySelectorAll('.seat.available');
+            const bookButton = document.getElementById('bookButton');
+            const totalPrice = document.getElementById('totalPrice');
+            let selectedSeats = [];
+           seats.forEach(seat => {
+                seat.addEventListener('click', function () {
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        const selectedSeatIndex = selectedSeats.indexOf(this.dataset.price);
+                        if (selectedSeatIndex > -1) {
+                            selectedSeats.splice(selectedSeatIndex, 1);
+                        }
+                    } else {
+                        this.classList.add('selected');
+                        selectedSeats.push(this.dataset.price);
+                    }
+                    updateTotalPrice();
+                });
+            });
+            bookButton.addEventListener('click', function () {
+                if (selectedSeats.length === 0) {
+                    alert('请选择至少一个座位');
+                } else {
+                    alert(`您已选择座位：${selectedSeats.length}，总价：￥${totalPrice.innerHTML.match(/\d+\.?\d*/)[0]}`);
+                }
+            });
+            function updateTotalPrice() {
+                const total = selectedSeats.length * 60;
+                totalPrice.textContent = `总价：￥${total}`;
+            }
+        });
+    </script>
+</body>
+
+</html>

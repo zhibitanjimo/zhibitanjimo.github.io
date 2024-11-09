@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // call apply  bind 区别
+
+            let obj = {
+                name: "nick",
+                age: 18,
+            };
+
+            function greet(x, y, z) {
+                console.log("hello", this.name, this, x, y, z);
+            }
+
+            greet("a", "b");
+            // 等同window.greet()  this指向 window
+
+            // obj添加 greet属性 等同于全局的greet(引用)
+            obj.greet = greet;
+
+            obj.greet("c"); // this指向 obj
+            // this指向动态指向 函数调用的时候这个函数挂载的对象
+
+            let obj2 = {
+                name: "jack",
+                age: 20,
+            };
+            console.log(obj2);
+
+            // obj2.greet();
+            // obj2.greet is not a function
+
+            // 把一个函数 临时借用给某个对象 func.call(obj,参数1,参数2...)
+            greet.call(obj2, "x", "y", "z"); // this指向 obj2
+            greet.call(null); // this 指向 window
+
+            // let arr = Array.prototype.slice.call(arguments);
+            // Array.prototype.slice是一个函数
+            // arguments是一个对象 本身没有slice方法
+
+            // ===============================
+            console.log("===========");
+
+            greet.call(obj2, 11, 22, 33);
+            greet.apply(obj2, [11, 22, 33]);
+            // 都是临时借用某个方法 apply需要把传递给greet函数的多个参数变成数组
+
+            // 求nums的最大值 最小值
+            var nums = [1, 8, 5, 2, 6, 3];
+
+            // console.log(Math.max(1, 8, 5, 2, 6, 3));
+            // console.log(Math.max(nums)); // NaN
+
+            console.log(Math.max.apply(null, nums));
+        </script>
+    </body>
+</html>

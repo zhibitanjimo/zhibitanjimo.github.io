@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            // age 是变量名 也是对象的属性名
+            let { age, name } = { name: "nick", age: 17 };
+            console.log(name, age);
+
+            let { baz } = { foo: "aaa", bar: "bbb" };
+            console.log(baz); // 解构失败
+        </script> -->
+        <!-- <script>
+            // 如果变量名与属性名不一致，必须写成下面这样。
+            let { name: name } = { name: "nick", age: 17 };
+            let { name: nickName } = { name: "nick", age: 17 };
+            // { name: nickName } name匹配模式 对象的键名 nickName变量名
+
+            let obj = { first: "hello", last: "world" };
+            let { first: f, last: l } = obj;
+            console.log(f, l);
+            // console.log(first, last);
+
+            
+        </script> -->
+
+        <!-- <script>
+            let obj = {
+                p: ["Hello", { y: "World" }],
+            };
+
+            let {
+                p,
+                p: [x, { y }],
+            } = obj;
+            console.log(p, x, y);
+
+            // ============
+            let {
+                loc,
+                loc: { start },
+                loc: {
+                    start: { line },
+                },
+            } = {
+                loc: {
+                    start: {
+                        line: 1,
+                        column: 5,
+                    },
+                },
+            }; 
+        </script>-->
+        <!-- <script>
+            let { x = 11 } = {};
+            console.log(x);
+
+            let { o = 1, p = 2, q = 3 } = { o: 0, p: false, q: null };
+            console.log(o, p, q);
+        </script> -->
+        <!-- <script>
+            let { x: y = { name: "nick" } } = { y: undefined };
+            console.log(y);
+            // console.log(x);
+        </script> -->
+
+        <!-- <script>
+            function move({ x = 0, y = 0 }) {
+                return [x, y];
+            }
+            console.log(move({ x: 1, y: 2 }));
+            console.log(move({ x: 1 }));
+            console.log(move({ y: 2 }));
+            console.log(move({}));
+            console.log(move()); // 报错
+
+            // let { x = 0, y = 0 } = undefined;
+        </script> -->
+
+        <script>
+            function move({ x = 0, y = 0 } = {}) {
+                return [x, y];
+            }
+            console.log(move({ x: 1, y: 2 }));
+            console.log(move({ x: 1 }));
+            console.log(move({ y: 2 }));
+            console.log(move({}));
+            console.log(move());
+        </script>
+    </body>
+</html>

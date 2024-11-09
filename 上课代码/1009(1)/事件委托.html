@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+            <li>item 6</li>
+            <li>item 7</li>
+            <li>item 8</li>
+            <li>item 9</li>
+            <p>干扰项</p>
+            <li>item 10</li>
+        </ul>
+
+        <script>
+            var ul = document.querySelector("ul");
+            ul.onclick = function (event) {
+                console.log(this, event.target, event.target.tagName);
+                // if (this !== event.target) {
+                //     event.target.style.backgroundColor = "red";
+                // }
+                if (event.target.tagName === "LI") {
+                    event.target.style.backgroundColor = "red";
+                }
+            };
+
+            // 即便是未来添加的元素也会触发事件
+            var node = document.createElement("li");
+            node.innerText = `item ${Date.now()}`;
+            ul.appendChild(node);
+            
+        </script>
+    </body>
+</html>

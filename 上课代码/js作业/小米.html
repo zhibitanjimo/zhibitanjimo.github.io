@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            width: 300px;
+        }
+
+        .active {
+            color: red;
+            border-bottom: 2px solid red;
+            padding-bottom: 3px;
+        }
+    </style>
+    <script src="./jq/jQuery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="active">小米手机</li>
+            <li>红米手机</li>
+            <li>电视</li>
+            <li>笔记本</li>
+            <li>平板</li>
+        </ul>
+
+        <div class="pic">
+            <div>
+                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a8fec02d8edf2bc5d1ed975823465c6.png?thumb=1&w=160&h=110&f=webp&q=90"
+                    alt="">
+            </div>
+
+            <div>
+                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/fa1b75b14fd41a5e1d98d25cbe6a1a89.png?thumb=1&w=160&h=110&f=webp&q=90"
+                    alt="">
+            </div>
+
+            <div>
+                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/b16339167ac548f07334116f0ab80907.png?thumb=1&w=160&h=110&f=webp&q=90"
+                    alt="">
+            </div>
+
+            <div>
+                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3a5d8336e401924d82e77c105bc90b8d.png?thumb=1&w=160&h=110&f=webp&q=90"
+                    alt="">
+            </div>
+            <div>
+                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f8dd1013092765f219fb3f90a1076539.png?thumb=1&w=160&h=110&f=webp&q=90"
+                    alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>1.
+    // $('.pic img').hide().eq(0).show()
+    // var lis = document.querySelectorAll('ul li')
+    // lis.forEach(function (item, index) {
+    //     console.log(item);
+    //     item.onclick = function () {
+    //         $('ul li').removeClass('active').eq(index).addClass('active')
+    //         $('.pic img').hide().eq(index).show()
+    //     }
+    // })
+    2. 
+    $('.pic img').hide().eq(0).show()
+
+    console.log($("ul li"));
+
+    // 为所有匹配到的元素都绑定一个点击事件
+
+
+
+    $("ul li").click(function () {
+        // console.log("点击成功",$(this));
+
+
+        $('ul li').removeClass('active')
+        $(this).addClass('active')
+
+        $(this)
+
+        console.log();
+
+
+        $('.pic img').hide().eq($('ul li').index($(this))).show()
+    });
+
+</script>
+
+</html>

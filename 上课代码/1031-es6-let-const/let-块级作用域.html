@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            var a = 1; // 全局作用域
+
+            // 代码块  es5里面 没有块级作用域(就是全局)
+            {
+                var x = 10;
+            }
+
+            function xxx() {
+                // var b = 2; // 函数作用域
+                b = 2; // 不用var关键词，默认就是全局作用域
+                console.log(a, b);
+            }
+            xxx();
+
+            console.log("函数外部", a, b);
+            console.log(window); // var 关键词声明的变量 两种作用域 全局 局部
+            // 不使用var 关键词，默认就是全局作用域
+            // es5全局变量都会挂载到window对象上
+
+            console.log("x=", x);
+        </script> -->
+
+        <!-- <script>
+            let a = 1; // 全局作用域
+
+            // 代码块 let比var多增加了 块级作用域
+            {
+                let x = 10;
+            }
+            function xxx() {
+                let b = 2; // 函数作用域
+                // console.log(a, b, x); // x是块级作用域
+            }
+            xxx();
+
+            // console.log("函数外部", a, b);
+            console.log(window);
+            // 使用let关键词声明的全局变量不会挂再到window对象 而是在global对象上
+            // 在浏览器环境 globalThis === window
+
+            console.log("x", x); //x is not defined
+        </script> -->
+
+        <!-- <script>
+            let a = 1;
+            {
+                let x = 10;
+                function xxx() {
+                    let b = 2;
+                    console.log(a, b, x);
+                }
+                xxx();
+                // 函数嵌套在快作用域内部
+            }
+        </script> -->
+
+        <script>
+            let a = 1;
+
+            {
+                let x = 10;
+                function xxx() {
+                    let b = 2;
+                    console.log(a, b, x);
+                }
+            }
+            xxx();
+            // 函数嵌套在块作用域内部 x是函数定义时候所在的作用域(静态作用域)
+        </script>
+    </body>
+</html>

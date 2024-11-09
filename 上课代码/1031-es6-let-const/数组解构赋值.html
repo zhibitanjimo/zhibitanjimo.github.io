@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            
+            let a = 1;
+            let b = 2;
+            let c = 3;
+
+            console.log(a, b, c);
+        </script> -->
+
+        <!-- <script>
+            let a = 1,
+                b = 2,
+                c = 3;
+            console.log(a, b, c);
+        </script> -->
+
+        <!-- <script>
+            //    数组的解构赋值
+            let [a, b, c] = [1, 2, 3];
+            console.log(a, b, c);
+
+            // 不完全解构
+            let [x, y] = [11, 22, 33];
+            console.log(x, y);
+
+            let [, m, n] = [11, 22, 33];
+            console.log(m, n);
+
+            // ... 剩余的项当成数组结构到q // q [22,33,44]
+            let [p, ...q] = [11, 22, 33, 44];
+            console.log(p, q);
+
+            // 如果解构不成功，变量的值就等于undefined
+        </script> -->
+
+        <script>
+            // 解构默认值
+            let [a = 11, b = 22, c] = [1, undefined, 3];
+            console.log(a, b, c);
+            // 先解构如果解构到的值是 undefined 那就取默认值
+
+            let [x = 111, y = 222] = [0, false];
+            console.log(x, y);
+            // 要取默认值 解构到的值必须严格等于 undefined
+
+            function f() {
+                console.log("aaa");
+                console.log("bbb");
+                console.log("ccc");
+                return 111;
+            }
+            var d = f();
+        </script>
+
+        <!-- https://es6.ruanyifeng.com/ -->
+    </body>
+</html>
